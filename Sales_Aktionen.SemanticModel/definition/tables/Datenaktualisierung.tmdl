@@ -1,0 +1,145 @@
+table Datenaktualisierung
+	lineageTag: ef46912d-0172-44a2-84c1-784f07c44f9e
+
+	column Datenaktualisierung
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn" Uhr"
+		lineageTag: bc382bd9-9f94-4d09-9501-a9e93eadc255
+		summarizeBy: none
+		sourceColumn: Datenaktualisierung
+
+		variation Variation
+			isDefault
+			relationship: 495f3d2d-a94a-4241-9326-f3460cf38969
+			defaultHierarchy: LocalDateTable_cabf5da3-1d10-488c-b64b-2d0ca40d1430.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Tag heute'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5ed0d89f-2448-4a64-94f4-d2df991c570e
+		summarizeBy: none
+		sourceColumn: Tag heute
+
+		variation Variation
+			isDefault
+			relationship: a0832c06-dc2a-4269-92fb-454134fd77ee
+			defaultHierarchy: LocalDateTable_124669d6-5714-4a1b-9723-fefeb672e654.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Vortag
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 744424fc-3d52-4237-bc4c-1e5ccfb6bdbf
+		summarizeBy: none
+		sourceColumn: Vortag
+
+		variation Variation
+			isDefault
+			relationship: 0dd4dc44-01e4-4ffe-92b9-cc785ab4ed7b
+			defaultHierarchy: LocalDateTable_97c24cc4-5418-40f1-906f-8f55658677c0.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '..Arbeitstage im Jahr'
+		dataType: double
+		lineageTag: 8ea18ec1-4ac4-49b4-9775-32c1cb78299c
+		summarizeBy: sum
+		sourceColumn: ..Arbeitstage im Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '..Arbeitstage im Monat'
+		dataType: double
+		lineageTag: 7b730aca-6853-4e57-994e-0f818fb5bead
+		summarizeBy: sum
+		sourceColumn: ..Arbeitstage im Monat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '..Arbeitstag im Monat'
+		dataType: double
+		lineageTag: 1f2ec8b0-db28-4c64-a933-2218bbe881f5
+		summarizeBy: sum
+		sourceColumn: ..Arbeitstag im Monat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '..Arbeitstag im Jahr'
+		dataType: double
+		lineageTag: 1cf22b13-3427-4108-88f7-94d45d84a80c
+		summarizeBy: sum
+		sourceColumn: ..Arbeitstag im Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% Monat'
+		dataType: double
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 8f773d5e-7132-453b-a8cc-91c3d1f315a4
+		summarizeBy: sum
+		sourceColumn: % Monat
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% Jahr'
+		dataType: double
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 3205fa00-966f-48cd-b1fc-2fefb7518db8
+		summarizeBy: sum
+		sourceColumn: % Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Datenaktualisierung = m
+		mode: import
+		source =
+				let
+				    Quelle = #table(type table[Datenaktualisierung=datetime], {{DateTime.LocalNow()}}),
+				    #"Duplizierte Spalte" = Table.DuplicateColumn(Quelle, "Datenaktualisierung", "Datenaktualisierung - Kopie"),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Duplizierte Spalte",{{"Datenaktualisierung - Kopie", type date}}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Geänderter Typ",{{"Datenaktualisierung - Kopie", "Tag heute"}}),
+				    #"Duplizierte Spalte1" = Table.DuplicateColumn(#"Umbenannte Spalten", "Tag heute", "Tag heute - Kopie"),
+				    #"Umbenannte Spalten1" = Table.RenameColumns(#"Duplizierte Spalte1",{{"Tag heute - Kopie", "Vortag"}}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Umbenannte Spalten1",{"Vortag"}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Entfernte Spalten", "Benutzerdefiniert", each [Tag heute] - 1),
+				    #"Entfernte Spalten1" = Table.RemoveColumns(#"Hinzugefügte benutzerdefinierte Spalte",{"Benutzerdefiniert"}),
+				    #"Hinzugefügte benutzerdefinierte Spalte1" = Table.AddColumn(#"Entfernte Spalten1", "Benutzerdefiniert", each [Tag heute] - Date.Day(1)),
+				    #"Entfernte Spalten2" = Table.RemoveColumns(#"Hinzugefügte benutzerdefinierte Spalte1",{"Benutzerdefiniert"}),
+				    #"Duplizierte Spalte2" = Table.DuplicateColumn(#"Entfernte Spalten2", "Tag heute", "Tag heute - Kopie"),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Duplizierte Spalte2",{{"Tag heute - Kopie", type number}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte2" = Table.AddColumn(#"Geänderter Typ1", "Benutzerdefiniert", each [#"Tag heute - Kopie"] - 1),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte2",{{"Benutzerdefiniert", type date}}),
+				    #"Entfernte Spalten3" = Table.RemoveColumns(#"Geänderter Typ2",{"Tag heute - Kopie"}),
+				    #"Umbenannte Spalten2" = Table.RenameColumns(#"Entfernte Spalten3",{{"Benutzerdefiniert", "Vortag"}}),
+				    #"Zusammengeführte Abfragen" = Table.NestedJoin(#"Umbenannte Spalten2", {"Vortag"}, #"Mastertabelle Datum", {"Datum"}, "Mastertabelle Datum", JoinKind.LeftOuter),
+				    #"Erweiterte Mastertabelle Datum" = Table.ExpandTableColumn(#"Zusammengeführte Abfragen", "Mastertabelle Datum", {"Arbeitstage im Jahr", "Arbeitstage im Monat", "Arbeitstag im Monat", "Arbeitstag im Jahr"}, {"..Arbeitstage im Jahr", "..Arbeitstage im Monat", "..Arbeitstag im Monat", "..Arbeitstag im Jahr"}),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Erweiterte Mastertabelle Datum",{{"..Arbeitstage im Jahr", type number}, {"..Arbeitstage im Monat", type number}, {"..Arbeitstag im Monat", type number}, {"..Arbeitstag im Jahr", type number}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte3" = Table.AddColumn(#"Geänderter Typ3", "%gearbeitet Monat", each [#"..Arbeitstag im Monat"]/[#"..Arbeitstage im Monat"]),
+				    #"Geänderter Typ4" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte3",{{"%gearbeitet Monat", Percentage.Type}}),
+				    #"Umbenannte Spalten3" = Table.RenameColumns(#"Geänderter Typ4",{{"%gearbeitet Monat", "% Monat"}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte4" = Table.AddColumn(#"Umbenannte Spalten3", "% Jahr", each [#"..Arbeitstag im Jahr"]/[#"..Arbeitstage im Jahr"]),
+				    #"Geänderter Typ5" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte4",{{"% Jahr", Percentage.Type}})
+				in
+				    #"Geänderter Typ5"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

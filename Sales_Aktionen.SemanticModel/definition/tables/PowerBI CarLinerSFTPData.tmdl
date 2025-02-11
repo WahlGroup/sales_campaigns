@@ -1,0 +1,846 @@
+table 'PowerBI CarLinerSFTPData'
+	lineageTag: f5f1d61d-73b1-4e5a-ba24-69790fc83ff7
+
+	column Auftrags-Nr
+		dataType: int64
+		formatString: 0
+		lineageTag: 4173eaff-e9e5-47e0-b76a-f8be1ce7a17d
+		summarizeBy: sum
+		sourceColumn: Auftrags-Nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 17d3bbdd-0116-46dd-9a32-bb90232445e1
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reservierungsende
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 82495c81-2944-4e32-8726-e299dd7d42fb
+		summarizeBy: none
+		sourceColumn: Reservierungsende
+
+		variation Variation
+			isDefault
+			relationship: 3be25917-0569-4780-96e3-4fd725a67bf9
+			defaultHierarchy: LocalDateTable_11438529-3d85-41d6-a8ed-1dda3883720b.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Brutto Erlös'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 728bcec8-a196-4410-9e88-56f27f0f5734
+		summarizeBy: sum
+		sourceColumn: Brutto Erlös
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Fz-NL
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 188143a1-32d0-4476-95c1-8ea0b9683b15
+		summarizeBy: sum
+		sourceColumn: Fz-NL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Art
+		dataType: string
+		lineageTag: b7fd4b17-c57a-4e5e-8b93-597bd99de1da
+		summarizeBy: none
+		sourceColumn: Art
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marke
+		dataType: string
+		lineageTag: f6a7541a-3403-4ebb-8be7-0dc32b0c9c2b
+		summarizeBy: none
+		sourceColumn: Marke
+
+		annotation SummarizationSetBy = Automatic
+
+	column EZ-Datum
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 286f979e-c8fb-4a65-820b-70f1501cc97d
+		summarizeBy: none
+		sourceColumn: EZ-Datum
+
+		variation Variation
+			isDefault
+			relationship: eee985a3-30a9-4335-981e-85c5b566aa63
+			defaultHierarchy: LocalDateTable_6cb4f3bf-a882-4441-9249-cb4e65b531ac.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WZ
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 79f423d9-27ca-43cd-9433-115aa5dcaa1b
+		summarizeBy: none
+		sourceColumn: WZ
+
+		variation Variation
+			isDefault
+			relationship: d656045e-eff4-45b0-bc90-eb24d694d9d1
+			defaultHierarchy: LocalDateTable_06c51400-5e2d-445b-9454-efa25a4a05b7.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'VKP nto'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 6273f5c1-4108-409f-927e-dd63c2bf964b
+		summarizeBy: sum
+		sourceColumn: VKP nto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column Eingang
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7c1a6e3a-35ca-436e-b3b4-be4252af4fe5
+		summarizeBy: none
+		sourceColumn: Eingang
+
+		variation Variation
+			isDefault
+			relationship: bc2c876d-4e04-4812-a8df-628ef34278f9
+			defaultHierarchy: LocalDateTable_560b2791-8454-455b-bc4b-330d09387be7.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Abmeldedat
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2e684328-9133-4a69-aee1-aa689f10806b
+		summarizeBy: none
+		sourceColumn: Abmeldedat
+
+		variation Variation
+			isDefault
+			relationship: fb5ae60d-5a08-42f0-a94f-8a0e2a9755f9
+			defaultHierarchy: LocalDateTable_5e3e8e03-7cef-4acf-9c84-749b34de41e7.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Fg-Nr
+		dataType: string
+		lineageTag: 678d4110-671b-4bd4-a791-dc8dd4c2df36
+		summarizeBy: none
+		sourceColumn: Fg-Nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bemerkung
+		dataType: string
+		lineageTag: 25895dd0-6d1b-440e-a9d3-f59edf040775
+		summarizeBy: none
+		sourceColumn: Bemerkung
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kd-Nr
+		dataType: string
+		lineageTag: c2f561ab-1966-4bd2-9d2c-cd420e0dc5e4
+		summarizeBy: none
+		sourceColumn: Kd-Nr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kd-Name
+		dataType: string
+		lineageTag: 1eb3fcb8-7654-4e51-9430-eb7fbb4f50c6
+		summarizeBy: none
+		sourceColumn: Kd-Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Händlergeschäft
+		dataType: int64
+		formatString: 0
+		lineageTag: 06a32ff0-5aa2-46b8-9db2-2872e72af6fa
+		summarizeBy: sum
+		sourceColumn: Händlergeschäft
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hinweistext
+		dataType: string
+		lineageTag: 34737e8d-c288-41f6-8a37-f97520f620e3
+		summarizeBy: none
+		sourceColumn: Hinweistext
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kd-Rechnung
+		dataType: decimal
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: a7524f94-ae07-401c-8877-f4d9254be583
+		summarizeBy: sum
+		sourceColumn: Kd-Rechnung
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bemerkung Ausl.'
+		dataType: string
+		lineageTag: 1b0b126f-9752-4aac-a192-95d5e9b992e3
+		summarizeBy: none
+		sourceColumn: Bemerkung Ausl.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 100ce75a-8b44-492f-92bd-0ad4157190b6
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vorname
+		dataType: string
+		lineageTag: fd456197-55d9-4706-b4d4-f01be3406f49
+		summarizeBy: none
+		sourceColumn: Vorname
+
+		annotation SummarizationSetBy = Automatic
+
+	column Strasse
+		dataType: string
+		lineageTag: f978745c-a567-4460-a7fc-c572a66a4034
+		summarizeBy: none
+		sourceColumn: Strasse
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plz
+		dataType: string
+		lineageTag: 83ea78c3-8dd6-4b7e-ae4b-02e3b686213a
+		summarizeBy: none
+		sourceColumn: Plz
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ort
+		dataType: string
+		lineageTag: 552c5c5e-4c18-49be-a96a-f18dbad43bfe
+		summarizeBy: none
+		sourceColumn: Ort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Eingereicht
+		dataType: string
+		lineageTag: 2897a0a5-ed77-46da-888d-670cb69fd863
+		summarizeBy: none
+		sourceColumn: Eingereicht
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eingereicht Name'
+		dataType: string
+		lineageTag: 6daac192-d7ec-4f79-be96-750fc109588c
+		summarizeBy: none
+		sourceColumn: Eingereicht Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genehmigt
+		dataType: string
+		lineageTag: 1c7a0f44-f8b0-484e-9ff0-34cb32b6a564
+		summarizeBy: none
+		sourceColumn: Genehmigt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Genehmigt Name'
+		dataType: string
+		lineageTag: c6ed2a66-159a-4258-9c83-016459cb711e
+		summarizeBy: none
+		sourceColumn: Genehmigt Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Verkäuferprovision
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: cb49bb1b-1bf8-49f6-9340-ab7539837e31
+		summarizeBy: sum
+		sourceColumn: Verkäuferprovision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Verkäufer Name'
+		dataType: string
+		lineageTag: e5fa727c-a034-46dc-954f-fc38504fee40
+		summarizeBy: none
+		sourceColumn: Verkäufer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kosten ¤'
+		dataType: decimal
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 77493774-b1d5-4c39-9b54-9a2ebc047e89
+		summarizeBy: sum
+		sourceColumn: Kosten ¤
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ertrag ¤'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 236a3da6-cf55-45b1-b669-f6b92eafbe65
+		summarizeBy: sum
+		sourceColumn: Ertrag ¤
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Rabatt auf UPE ¤'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 582ba50c-5368-40ad-a3cd-189beb55928d
+		summarizeBy: sum
+		sourceColumn: Rabatt auf UPE ¤
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Rabatt auf UPE %'
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 6f75cc26-e65a-413d-ac8d-7a405f2f1d0a
+		summarizeBy: sum
+		sourceColumn: Rabatt auf UPE %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column 'Genehmigt Datum.2'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 63e934fc-a6b2-404e-a08f-12996cbd0bfd
+		summarizeBy: none
+		sourceColumn: Genehmigt Datum.2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Genehmigt Datum.1'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a24afd98-36b4-4a72-8b32-2a785a50124a
+		summarizeBy: none
+		sourceColumn: Genehmigt Datum.1
+
+		variation Variation
+			isDefault
+			relationship: c0b773ae-b511-4fb1-8888-ed1f0cc02721
+			defaultHierarchy: LocalDateTable_9c4aa017-24d0-497e-9234-270ecc8f9548.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Eingereicht Datum.2'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 4bd03887-a50a-44cd-bce3-dece52435389
+		summarizeBy: none
+		sourceColumn: Eingereicht Datum.2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Eingereicht Datum.1'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aeaa6257-475f-455b-9154-654d740d8ff7
+		summarizeBy: none
+		sourceColumn: Eingereicht Datum.1
+
+		variation Variation
+			isDefault
+			relationship: 227a005b-537f-42e0-b716-1a32bb094647
+			defaultHierarchy: LocalDateTable_73def2c8-9cfc-4602-ae55-fe4b1724eef2.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Eigentümer
+		dataType: string
+		lineageTag: 0fc71fd4-f306-4e28-9962-af8d4b2e7817
+		summarizeBy: none
+		sourceColumn: Eigentümer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eigentümer Gesell.'
+		dataType: string
+		lineageTag: bd2162c8-47ce-4041-8449-f6aa1f91df4b
+		summarizeBy: none
+		sourceColumn: Eigentümer Gesell.
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standort.1'
+		dataType: string
+		lineageTag: 96329192-cbe4-4630-b55c-c681c79e5ca6
+		summarizeBy: none
+		sourceColumn: Standort.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fz-Standort Gesell'
+		dataType: string
+		lineageTag: 0657a03c-da15-4a65-8210-421bd550cfef
+		summarizeBy: none
+		sourceColumn: Fz-Standort Gesell
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fakturadatum.1'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c69a93fe-0a82-43ec-ad35-a3b1e2e1932c
+		summarizeBy: none
+		sourceColumn: Fakturadatum.1
+
+		variation Variation
+			isDefault
+			relationship: 17673cff-84c7-468a-a838-142f8b579c79
+			defaultHierarchy: LocalDateTable_4cc1d224-1cfd-40ed-b9bc-e718bfbd1559.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Auftragsdatum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 45b6231a-5c57-4364-8963-72554b9ba087
+		summarizeBy: none
+		sourceColumn: Auftragsdatum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Auftragsdatum.1 - Kopie'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d7ef9ac-5c0d-4047-9925-eb8b40f286db
+		summarizeBy: sum
+		sourceColumn: Auftragsdatum.1 - Kopie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl AE 2023'
+		dataType: double
+		formatString: 0
+		lineageTag: 95060232-9671-45d0-8dfa-f2bbb4ddb286
+		summarizeBy: sum
+		sourceColumn: Anzahl AE 2023
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Anzahl AE 2024'
+		dataType: double
+		formatString: 0
+		lineageTag: 57d77340-2080-4321-8ec1-7cd006fe90e9
+		summarizeBy: sum
+		sourceColumn: Anzahl AE 2024
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Zub
+		dataType: string
+		lineageTag: 0fe3fd2f-08d8-4183-8ff1-eb2cb0ee6bf2
+		summarizeBy: none
+		sourceColumn: Zub
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aktionen
+		dataType: string
+		lineageTag: 72ef7c0c-cffb-40e7-a3c8-af0b095f6ee7
+		summarizeBy: none
+		sourceColumn: Aktionen
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modell
+		dataType: string
+		lineageTag: b2c09151-06e9-4009-b159-b01bc37b1e61
+		summarizeBy: none
+		sourceColumn: Modell
+
+		annotation SummarizationSetBy = Automatic
+
+	column Typ-Text
+		dataType: string
+		lineageTag: e2b0fe45-1103-4afd-81ae-d0daf96c1779
+		summarizeBy: none
+		sourceColumn: Typ-Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl AE'
+		dataType: int64
+		formatString: 0
+		lineageTag: fe3b6cc4-abd8-4cfd-9dc6-27bb1fe515b3
+		summarizeBy: sum
+		sourceColumn: Anzahl AE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Auftragsdatum - Kopie'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9ceba3db-67cc-4c61-a70d-ebfd40f5dca0
+		summarizeBy: none
+		sourceColumn: Auftragsdatum - Kopie
+
+		variation Variation
+			isDefault
+			relationship: 803f9d65-82bb-4dae-948d-e37e31108097
+			defaultHierarchy: LocalDateTable_8c354c49-5d12-481a-92f7-d91a8c2661df.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Standort VK'
+		dataType: string
+		lineageTag: 7ce58364-5c97-4bb1-9bbc-92d125931501
+		summarizeBy: none
+		sourceColumn: Standort VK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hersteller Code'
+		dataType: string
+		lineageTag: 3f7a76bb-8083-42e9-bfe0-16effc7932b4
+		summarizeBy: none
+		sourceColumn: Hersteller Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: f0a69705-c4a6-44a1-a54f-4262c23f27e5
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl GW'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b92af8d-be66-4a41-b784-fa0cc391fce2
+		summarizeBy: sum
+		sourceColumn: Anzahl GW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl NW'
+		dataType: int64
+		formatString: 0
+		lineageTag: 63297f5a-5c1f-4e24-8a76-5f9ed6192a2f
+		summarizeBy: sum
+		sourceColumn: Anzahl NW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl VFW'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b31a766-17e8-4bc0-b812-73b8dccd4eb7
+		summarizeBy: sum
+		sourceColumn: Anzahl VFW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl TZ'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9df836df-f408-461d-b517-bc3c08b2c6c8
+		summarizeBy: sum
+		sourceColumn: Anzahl TZ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl Bestand'
+		dataType: int64
+		formatString: 0
+		lineageTag: a341bb1a-a241-494b-941f-cd51c1979af3
+		summarizeBy: sum
+		sourceColumn: Anzahl Bestand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filiale
+		dataType: string
+		lineageTag: 256233ea-4a7a-4bf1-96b1-2492ef7c88b4
+		summarizeBy: none
+		sourceColumn: Filiale
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zulassung
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 12c594f7-0533-4b7f-a148-007f5870ff62
+		summarizeBy: none
+		sourceColumn: Zulassung
+
+		variation Variation
+			isDefault
+			relationship: fa5750a0-87ac-43fa-8ce3-56567f7d397b
+			defaultHierarchy: LocalDateTable_71647e6a-d349-4282-8bef-febb780c3d9d.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'AE NW ges.'
+		dataType: int64
+		formatString: 0
+		lineageTag: d6509ffa-9d0a-4891-ab2c-0ab9f5b4a830
+		summarizeBy: sum
+		sourceColumn: AE NW ges.
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PowerBI CarLinerSFTPData' = m
+		mode: import
+		source =
+				let
+				    Quelle = Sql.Databases("SRV-WAHLDB\BI"),
+				    Auswertungs_DB = Quelle{[Name="Auswertungs_DB"]}[Data],
+				    PowerBI_CarLinerSFTPData = Auswertungs_DB{[Schema="PowerBI",Item="CarLinerSFTPData"]}[Data],
+				    #"Gefilterte Zeilen6" = Table.SelectRows(PowerBI_CarLinerSFTPData, each true),
+				    #"Sortierte Zeilen" = Table.Sort(#"Gefilterte Zeilen6",{{"FileName", Order.Descending}}),
+				    #"Ersetzter Wert82" = Table.ReplaceValue(#"Sortierte Zeilen",null,"0,00",Replacer.ReplaceValue,{"Verkäuferprovision"}),
+				    #"Ersetzter Wert83" = Table.ReplaceValue(#"Ersetzter Wert82",null,"0,00",Replacer.ReplaceValue,{"Kosten ¤", "Ertrag ¤", "Rabatt auf UPE ¤", "Rabatt auf UPE %", "Fahrzeugpreis - Kosten", "Fahrzeugpreis - Ertrag", "Interne Aufwände (wertneutral) - Kosten", "Interne Aufwände (wertneutral) - Ertrag", "Kundenrechnung: Fahrzeug - Kosten", "Kundenrechnung: Fahrzeug - Kundenpreis", "Kundenrechnung: Fahrzeug - Hauspreis", "Kundenrechnung: Überführung und Zugaben - Kosten", "Kundenrechnung: Überführung und Zugaben - Kundenpreis", "Kundenrechnung: Überführung und Zugaben - Hauspreis", "Inzahlungsnahme - Kosten", "Inzahlungsnahme - Ertrag", "Händlerzubehör - Kosten", "Händlerzubehör - Kundenpreis", "Händlerzubehör - Hauspreis", "Sonstiges - Kosten", "Sonstiges - Ertrag", "Bankprovision - Kosten", "Bankprovision - Ertrag", "Sonderverkäufe - Kosten", "Sonderverkäufe - Kundenpreis", "Sonderverkäufe - Hauspreis", "Informative Kosten - Kosten", "Informative Kosten - Ertrag"}),
+				    #"Ersetzter Wert85" = Table.ReplaceValue(#"Ersetzter Wert83",".","",Replacer.ReplaceText,{"Kosten ¤", "Ertrag ¤", "Rabatt auf UPE ¤", "Rabatt auf UPE %", "Fahrzeugpreis - Kosten", "Fahrzeugpreis - Ertrag", "Interne Aufwände (wertneutral) - Kosten", "Interne Aufwände (wertneutral) - Ertrag", "Kundenrechnung: Fahrzeug - Kosten", "Kundenrechnung: Fahrzeug - Kundenpreis", "Kundenrechnung: Fahrzeug - Hauspreis", "Kundenrechnung: Überführung und Zugaben - Kosten", "Kundenrechnung: Überführung und Zugaben - Kundenpreis", "Kundenrechnung: Überführung und Zugaben - Hauspreis", "Inzahlungsnahme - Kosten", "Inzahlungsnahme - Ertrag", "Händlerzubehör - Kosten", "Händlerzubehör - Kundenpreis", "Händlerzubehör - Hauspreis", "Sonstiges - Kosten", "Sonstiges - Ertrag", "Bankprovision - Kosten", "Bankprovision - Ertrag", "Sonderverkäufe - Kosten", "Sonderverkäufe - Kundenpreis", "Sonderverkäufe - Hauspreis", "Informative Kosten - Kosten", "Informative Kosten - Ertrag"}),
+				    #"Ersetzter Wert86" = Table.ReplaceValue(#"Ersetzter Wert85",".","",Replacer.ReplaceText,{"Verkäuferprovision"}),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Ersetzter Wert86", "Auftragsdatum", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, true), {"Auftragsdatum.1", "Auftragsdatum.2"}),
+				    #"Spalte nach Trennzeichen teilen10" = Table.SplitColumn(#"Spalte nach Trennzeichen teilen", "Standort", Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.Csv, true), {"Standort.1", "Standort.2"}),
+				    #"Umbenannte Spalten6" = Table.RenameColumns(#"Spalte nach Trennzeichen teilen10",{{"Standort.2", "Standort VK"}}),
+				    #"Ersetzter Wert89" = Table.ReplaceValue(#"Umbenannte Spalten6","VfW","VFW",Replacer.ReplaceText,{"Art"}),
+				    #"Ersetzter Wert10" = Table.ReplaceValue(#"Ersetzter Wert89",")","",Replacer.ReplaceText,{"Standort VK"}),
+				    #"Ersetzter Wert11" = Table.ReplaceValue(#"Ersetzter Wert10","2","",Replacer.ReplaceText,{"Standort VK"}),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Ersetzter Wert11",{{"Auftragsdatum.1", type date}, {"Auftragsdatum.2", type time}}),
+				    #"Ersetzter Wert6" = Table.ReplaceValue(#"Geänderter Typ","0000-00-00","",Replacer.ReplaceText,{"Fakturadatum"}),
+				    #"Spalte nach Trennzeichen teilen1" = Table.SplitColumn(#"Ersetzter Wert6", "Fakturadatum", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, true), {"Fakturadatum.1", "Fakturadatum.2"}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen1",{{"Fakturadatum.1", type date}, {"Fakturadatum.2", type time}, {"Reservierungsende", type date}}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Geänderter Typ1",{{"BE", "Brutto Erlös"}}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Umbenannte Spalten",{{"Brutto Erlös", Currency.Type}, {"Fz-NL", Currency.Type}, {"EZ", type date}}),
+				    #"Umbenannte Spalten1" = Table.RenameColumns(#"Geänderter Typ2",{{"EZ", "EZ-Datum"}}),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Umbenannte Spalten1",{{"Rg Eingangsdatum Werk", type date}, {"AbH", type date}, {"Abmeldedat", type date}}),
+				    #"Spalte nach Trennzeichen teilen2" = Table.SplitColumn(#"Geänderter Typ3", "Fz-Standort", Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.Csv, true), {"Fz-Standort.1", "Fz-Standort.2"}),
+				    #"Geänderter Typ4" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen2",{{"Fz-Standort.1", type text}, {"Fz-Standort.2", type text}}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Geänderter Typ4",")","",Replacer.ReplaceText,{"Fz-Standort.2"}),
+				    #"Spalte nach Trennzeichen teilen3" = Table.SplitColumn(#"Ersetzter Wert", "Fz-Standort.1", Splitter.SplitTextByEachDelimiter({"-"}, QuoteStyle.Csv, true), {"Fz-Standort.1.1", "Fz-Standort.1.2"}),
+				    #"Geänderter Typ5" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen3",{{"Fz-Standort.1.1", type text}, {"Fz-Standort.1.2", type text}}),
+				    #"Umbenannte Spalten2" = Table.RenameColumns(#"Geänderter Typ5",{{"Fz-Standort.1.1", "Fz-Standort Gesell"}}),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(#"Umbenannte Spalten2","Z2","R2",Replacer.ReplaceText,{"Fz-Standort Gesell"}),
+				    #"Entfernte Spalten1" = Table.RemoveColumns(#"Ersetzter Wert1",{"Standort.1"}),
+				    #"Zusammengeführte Spalten" = Table.CombineColumns(#"Entfernte Spalten1",{"Fz-Standort.1.2", "Fz-Standort.2"},Combiner.CombineTextByDelimiter("", QuoteStyle.None),"Standort.1"),
+				    #"Geänderter Typ6" = Table.TransformColumnTypes(#"Zusammengeführte Spalten",{{"WZ", type date}, {"VKP nto", Currency.Type}, {"Eingang", type date}, {"Rg Eingangsdatum Werk", type date}}),
+				    #"Spalte nach Trennzeichen teilen4" = Table.SplitColumn(#"Geänderter Typ6", "Eigentümer (Firma)", Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.Csv, true), {"Eigentümer (Firma).1", "Eigentümer (Firma).2"}),
+				    #"Geänderter Typ7" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen4",{{"Eigentümer (Firma).1", type text}, {"Eigentümer (Firma).2", type text}}),
+				    #"Ersetzter Wert2" = Table.ReplaceValue(#"Geänderter Typ7",")","",Replacer.ReplaceText,{"Eigentümer (Firma).2"}),
+				    #"Spalte nach Trennzeichen teilen5" = Table.SplitColumn(#"Ersetzter Wert2", "Eigentümer (Firma).1", Splitter.SplitTextByEachDelimiter({"-"}, QuoteStyle.Csv, true), {"Eigentümer (Firma).1.1", "Eigentümer (Firma).1.2"}),
+				    #"Geänderter Typ8" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen5",{{"Eigentümer (Firma).1.1", type text}, {"Eigentümer (Firma).1.2", type text}}),
+				    #"Ersetzter Wert3" = Table.ReplaceValue(#"Geänderter Typ8","Z2","R2",Replacer.ReplaceText,{"Eigentümer (Firma).1.1"}),
+				    #"Umbenannte Spalten3" = Table.RenameColumns(#"Ersetzter Wert3",{{"Eigentümer (Firma).1.1", "Eigentümer Gesell."}}),
+				    #"Zusammengeführte Spalten1" = Table.CombineColumns(#"Umbenannte Spalten3",{"Eigentümer (Firma).1.2", "Eigentümer (Firma).2"},Combiner.CombineTextByDelimiter("", QuoteStyle.None),"Eigentümer"),
+				    #"Ersetzter Wert4" = Table.ReplaceValue(#"Zusammengeführte Spalten1",".",",",Replacer.ReplaceText,{"Kd-Rechnung"}),
+				    #"Geänderter Typ9" = Table.TransformColumnTypes(#"Ersetzter Wert4",{{"Kd-Rechnung", Currency.Type}, {"geplante Auslieferung", type date}, {"tatsächliche Auslieferung", type date}, {"Geburtstag", type date}, {"Zinsdatum", type date}, {"A von AVZ", type date}, {"V von AVZ", type date}, {"Z von AVZ", type date}}),
+				    #"Spalte nach Trennzeichen teilen6" = Table.SplitColumn(#"Geänderter Typ9", "Eingereicht Datum", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, true), {"Eingereicht Datum.1", "Eingereicht Datum.2"}),
+				    #"Geänderter Typ10" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen6",{{"Eingereicht Datum.1", type date}, {"Eingereicht Datum.2", type time}}),
+				    #"Spalte nach Trennzeichen teilen7" = Table.SplitColumn(#"Geänderter Typ10", "Vorläufig_genehmigt Datum", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, true), {"Vorläufig_genehmigt Datum.1", "Vorläufig_genehmigt Datum.2"}),
+				    #"Geänderter Typ11" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen7",{{"Vorläufig_genehmigt Datum.1", type date}, {"Vorläufig_genehmigt Datum.2", type time}}),
+				    #"Spalte nach Trennzeichen teilen8" = Table.SplitColumn(#"Geänderter Typ11", "Genehmigt Datum", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, true), {"Genehmigt Datum.1", "Genehmigt Datum.2"}),
+				    #"Geänderter Typ12" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen8",{{"Genehmigt Datum.1", type date}, {"Genehmigt Datum.2", type time}}),
+				    #"Ersetzter Wert5" = Table.ReplaceValue(#"Geänderter Typ12",".",",",Replacer.ReplaceText,{"Verkäuferprovision"}),
+				    #"Geänderter Typ13" = Table.TransformColumnTypes(#"Ersetzter Wert5",{{"Verkäuferprovision", Currency.Type}, {"Kosten ¤", Currency.Type}, {"Ertrag ¤", Currency.Type}, {"Rabatt auf UPE ¤", Currency.Type}, {"Rabatt auf UPE %", Currency.Type}}),
+				    #"Spalte nach Trennzeichen teilen9" = Table.SplitColumn(#"Geänderter Typ13", "Typ-Text", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Typ-Text.1", "Typ-Text.2"}),
+				    #"Umbenannte Spalten4" = Table.RenameColumns(#"Spalte nach Trennzeichen teilen9",{{"Typ-Text.1", "Modell"}, {"Typ-Text.2", "Typ-Text"}}),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Umbenannte Spalten4",{"Auftrags-Nr", "Standort VK", "Auftragsdatum.1", "Auftragsdatum.2", "Fakturadatum.1", "Status", "Reservierungsende", "Brutto Erlös", "Fz-NL", "Art", "Marke", "Modell", "Typ-Text", "Zub", "EZ-Datum", "WZ", "VKP nto", "Eingang", "Abmeldedat", "Fz-Standort Gesell", "Standort.1", "Eigentümer Gesell.", "Eigentümer", "Fg-Nr", "Bemerkung", "Kd-Nr", "Kd-Name", "Händlergeschäft", "Hinweistext", "Kd-Rechnung", "Bemerkung Ausl.", "Name", "Vorname", "Strasse", "Plz", "Ort", "Eingereicht", "Eingereicht Datum.1", "Eingereicht Datum.2", "Eingereicht Name", "Genehmigt", "Genehmigt Name", "Genehmigt Datum.1", "Genehmigt Datum.2", "Verkäuferprovision", "Verkäufer Name", "Kosten ¤", "Ertrag ¤", "Rabatt auf UPE ¤", "Rabatt auf UPE %"}),
+				    #"Neu angeordnete Spalten" = Table.ReorderColumns(#"Andere entfernte Spalten",{"Kosten ¤", "VKP nto", "Kd-Rechnung", "Rabatt auf UPE %", "Rabatt auf UPE ¤", "Ertrag ¤", "Verkäuferprovision", "Verkäufer Name", "Genehmigt Datum.2", "Genehmigt Datum.1", "Genehmigt Name", "Genehmigt", "Eingereicht Name", "Eingereicht Datum.2", "Eingereicht Datum.1", "Eingereicht", "Ort", "Plz", "Strasse", "Vorname", "Name", "Bemerkung Ausl.", "Hinweistext", "Händlergeschäft", "Kd-Name", "Kd-Nr", "Bemerkung", "Fg-Nr", "Eigentümer", "Eigentümer Gesell.", "Standort.1", "Fz-Standort Gesell", "Abmeldedat", "Eingang", "WZ", "EZ-Datum", "Typ-Text", "Marke", "Art", "Fz-NL", "Brutto Erlös", "Reservierungsende", "Status", "Fakturadatum.1", "Auftragsdatum.1", "Auftragsdatum.2", "Auftrags-Nr"}),
+				    #"Duplizierte Spalte" = Table.DuplicateColumn(#"Neu angeordnete Spalten", "Auftragsdatum.1", "Auftragsdatum.1 - Kopie"),
+				    #"Extrahiertes Jahr" = Table.TransformColumns(#"Duplizierte Spalte",{{"Auftragsdatum.1 - Kopie", Date.Year, Int64.Type}}),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Extrahiertes Jahr", each [#"Auftragsdatum.1 - Kopie"] = null or [#"Auftragsdatum.1 - Kopie"] = 2023 or [#"Auftragsdatum.1 - Kopie"] = 2024 or [#"Auftragsdatum.1 - Kopie"] = 2025 or [#"Auftragsdatum.1 - Kopie"] = 2026),
+				    #"Hinzugefügte bedingte Spalte" = Table.AddColumn(#"Gefilterte Zeilen", "Anzahl AE 2023", each if [Auftragsdatum.1] < #date(2024, 1, 1) then 1 else if [Auftragsdatum.1] = null then 0 else 0),
+				    #"Ersetzte Fehler" = Table.ReplaceErrorValues(#"Hinzugefügte bedingte Spalte", {{"Anzahl AE 2023", 0}}),
+				    #"Geänderter Typ14" = Table.TransformColumnTypes(#"Ersetzte Fehler",{{"Anzahl AE 2023", type number}}),
+				    #"Hinzugefügte bedingte Spalte1" = Table.AddColumn(#"Geänderter Typ14", "Anzahl AE 2024", each if [Auftragsdatum.1] > #date(2023, 12, 31) then 1 else 0),
+				    #"Ersetzte Fehler1" = Table.ReplaceErrorValues(#"Hinzugefügte bedingte Spalte1", {{"Anzahl AE 2024", 0}}),
+				    #"Geänderter Typ15" = Table.TransformColumnTypes(#"Ersetzte Fehler1",{{"Anzahl AE 2024", type number}}),
+				    #"Ersetzter Wert7" = Table.ReplaceValue(#"Geänderter Typ15",null,"",Replacer.ReplaceValue,{"Bemerkung"}),
+				    #"Ersetzter Wert8" = Table.ReplaceValue(#"Ersetzter Wert7",null,"",Replacer.ReplaceValue,{"Hinweistext"}),
+				    Aktionen = Table.AddColumn(#"Ersetzter Wert8", "Aktionen", each if Text.Contains([Bemerkung], "Mietwagen Kroatien") then "Kroatien" else if Text.Contains([Hinweistext], "Maxus Diesel") then "Maxus Diesel Offensive" else "ohne"),
+				    #"Hinzugefügte bedingte Spalte2" = Table.AddColumn(Aktionen, "Anzahl AE", each if [#"Auftragsdatum.1 - Kopie"] = null then 0 else 1),
+				    #"Geänderter Typ16" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte2",{{"Anzahl AE", Int64.Type}}),
+				    #"Neu angeordnete Spalten1" = Table.ReorderColumns(#"Geänderter Typ16",{"Kosten ¤", "VKP nto", "Kd-Rechnung", "Rabatt auf UPE %", "Rabatt auf UPE ¤", "Ertrag ¤", "Verkäuferprovision", "Verkäufer Name", "Genehmigt Datum.2", "Genehmigt Datum.1", "Modell", "Genehmigt Name", "Zub", "Genehmigt", "Eingereicht Name", "Eingereicht Datum.2", "Eingereicht Datum.1", "Eingereicht", "Ort", "Plz", "Strasse", "Vorname", "Name", "Bemerkung Ausl.", "Hinweistext", "Händlergeschäft", "Kd-Name", "Kd-Nr", "Bemerkung", "Fg-Nr", "Eigentümer", "Eigentümer Gesell.", "Standort.1", "Fz-Standort Gesell", "Abmeldedat", "Eingang", "WZ", "EZ-Datum", "Typ-Text", "Marke", "Art", "Fz-NL", "Brutto Erlös", "Reservierungsende", "Status", "Fakturadatum.1", "Auftragsdatum.1", "Auftragsdatum.2", "Auftrags-Nr", "Auftragsdatum.1 - Kopie", "Anzahl AE", "Anzahl AE 2023", "Anzahl AE 2024", "Aktionen"}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Neu angeordnete Spalten1",{"Auftragsdatum.2"}),
+				    #"Umbenannte Spalten5" = Table.RenameColumns(#"Entfernte Spalten",{{"Auftragsdatum.1", "Auftragsdatum"}}),
+				    #"Duplizierte Spalte1" = Table.DuplicateColumn(#"Umbenannte Spalten5", "Auftragsdatum", "Auftragsdatum - Kopie"),
+				    #"Ersetzter Wert9" = Table.ReplaceValue(#"Duplizierte Spalte1"," ","",Replacer.ReplaceText,{"Standort.1"}),
+				    #"Duplizierte Spalte2" = Table.DuplicateColumn(#"Ersetzter Wert9", "Fg-Nr", "Fg-Nr - Kopie"),
+				    #"Spalte nach Position teilen" = Table.SplitColumn(#"Duplizierte Spalte2", "Fg-Nr - Kopie", Splitter.SplitTextByPositions({0, 3}, false), {"Fg-Nr - Kopie.1", "Fg-Nr - Kopie.2"}),
+				    #"Geänderter Typ17" = Table.TransformColumnTypes(#"Spalte nach Position teilen",{{"Modell", type text}, {"Typ-Text", type text}, {"Fg-Nr - Kopie.1", type text}, {"Fg-Nr - Kopie.2", type text}}),
+				    #"Entfernte Spalten2" = Table.RemoveColumns(#"Geänderter Typ17",{"Fg-Nr - Kopie.2"}),
+				    #"Umbenannte Spalten7" = Table.RenameColumns(#"Entfernte Spalten2",{{"Fg-Nr - Kopie.1", "Hersteller Code"}}),
+				    #"Hinzugefügte bedingte Spalte3" = Table.AddColumn(#"Umbenannte Spalten7", "Brand", each if [Marke] = null then [Hersteller Code] else [Marke]),
+				    #"Geänderter Typ18" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte3",{{"Brand", type text}})
+				,#"Ersetzter Wert18" = Table.ReplaceValue(#"Geänderter Typ18"," 4x4","",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert17" = Table.ReplaceValue(#"Ersetzter Wert18","1C4","Jeep",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert19" = Table.ReplaceValue(#"Ersetzter Wert17","Duster","Dacia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert20" = Table.ReplaceValue(#"Ersetzter Wert19","MEGA","Renault",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert21" = Table.ReplaceValue(#"Ersetzter Wert20","JSA","Suzuki",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert22" = Table.ReplaceValue(#"Ersetzter Wert21","JTD","Toyota",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert23" = Table.ReplaceValue(#"Ersetzter Wert22","KL1","Daewoo",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert24" = Table.ReplaceValue(#"Ersetzter Wert23","KMH","Hyndai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert25" = Table.ReplaceValue(#"Ersetzter Wert24","KNE","Kia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert26" = Table.ReplaceValue(#"Ersetzter Wert25","KPT","Ssangyong",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert27" = Table.ReplaceValue(#"Ersetzter Wert26","TMA","Hyndai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert28" = Table.ReplaceValue(#"Ersetzter Wert27","TMB","Skoda",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert29" = Table.ReplaceValue(#"Ersetzter Wert28","U5Y","Kia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert30" = Table.ReplaceValue(#"Ersetzter Wert29","UU1","Dacia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert31" = Table.ReplaceValue(#"Ersetzter Wert30","VF1","Renault",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert32" = Table.ReplaceValue(#"Ersetzter Wert31","VF3","Peugeot",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert33" = Table.ReplaceValue(#"Ersetzter Wert32","VF7","Citroen",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert34" = Table.ReplaceValue(#"Ersetzter Wert33","VFA","Alpine",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert35" = Table.ReplaceValue(#"Ersetzter Wert34","VR3","Peugeot",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert36" = Table.ReplaceValue(#"Ersetzter Wert35","VSS","Seat",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert37" = Table.ReplaceValue(#"Ersetzter Wert36","W0L","Opel",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert38" = Table.ReplaceValue(#"Ersetzter Wert37","WF0","Ford",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert39" = Table.ReplaceValue(#"Ersetzter Wert38","WBA","BMW",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert40" = Table.ReplaceValue(#"Ersetzter Wert39","WDD","Mercedes-Benz",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert41" = Table.ReplaceValue(#"Ersetzter Wert40","ZFA","Fiat",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert42" = Table.ReplaceValue(#"Ersetzter Wert41","WDB","Mercedes-Benz",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert43" = Table.ReplaceValue(#"Ersetzter Wert42","WAU","Audi",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert44" = Table.ReplaceValue(#"Ersetzter Wert43","JMZ","Mazda",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert45" = Table.ReplaceValue(#"Ersetzter Wert44","WVW","Volkswagen",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert46" = Table.ReplaceValue(#"Ersetzter Wert45","YV1","Volvo",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert47" = Table.ReplaceValue(#"Ersetzter Wert46","WV2","Volkswagen",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert48" = Table.ReplaceValue(#"Ersetzter Wert47","LYV","Mazda",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert50" = Table.ReplaceValue(#"Ersetzter Wert48","W1K","Mercedes-Benz",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert51" = Table.ReplaceValue(#"Ersetzter Wert50","W0V","Opel",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert52" = Table.ReplaceValue(#"Ersetzter Wert51","TSM","Suzuki",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert53" = Table.ReplaceValue(#"Ersetzter Wert52","WVG","Volkswagen",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert54" = Table.ReplaceValue(#"Ersetzter Wert53","MAL","Hyundai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert55" = Table.ReplaceValue(#"Ersetzter Wert54","SJN","Nissan",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert56" = Table.ReplaceValue(#"Ersetzter Wert55","WME","Smart",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert57" = Table.ReplaceValue(#"Ersetzter Wert56","KMX","Hyundai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert58" = Table.ReplaceValue(#"Ersetzter Wert57","LSJ","MG",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert59" = Table.ReplaceValue(#"Ersetzter Wert58","Volkswagen","VW",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert60" = Table.ReplaceValue(#"Ersetzter Wert59","XPENG","X-Peng",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert61" = Table.ReplaceValue(#"Ersetzter Wert60","Hyndai","Hyundai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert62" = Table.ReplaceValue(#"Ersetzter Wert61","ci","Dacia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert63" = Table.ReplaceValue(#"Ersetzter Wert62","CS","Hyundai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert64" = Table.ReplaceValue(#"Ersetzter Wert63","DW","Daewoo",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert65" = Table.ReplaceValue(#"Ersetzter Wert64","ABI","Skoda",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert66" = Table.ReplaceValue(#"Ersetzter Wert65","Adria","Mitsubishi",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert67" = Table.ReplaceValue(#"Ersetzter Wert66","WOL","Opel",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert68" = Table.ReplaceValue(#"Ersetzter Wert67","DaDaciaa","Dacia",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert69" = Table.ReplaceValue(#"Ersetzter Wert68","Xpeng","X-Peng",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert70" = Table.ReplaceValue(#"Ersetzter Wert69","MN","Mini",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert71" = Table.ReplaceValue(#"Ersetzter Wert70","Daimler (D)","DAIMLERCHRYSLER (D)",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert72" = Table.ReplaceValue(#"Ersetzter Wert71","xpeng","X-Peng",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert73" = Table.ReplaceValue(#"Ersetzter Wert72","/D","",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert74" = Table.ReplaceValue(#"Ersetzter Wert73","SEA","Seat",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert75" = Table.ReplaceValue(#"Ersetzter Wert74","smart","Smart",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert76" = Table.ReplaceValue(#"Ersetzter Wert75","NLH","Hyundai",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert12" = Table.ReplaceValue(#"Ersetzter Wert76","WMW","Mini",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert13" = Table.ReplaceValue(#"Ersetzter Wert12","LX","Toyota",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert14" = Table.ReplaceValue(#"Ersetzter Wert13","Lag","Renault",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert15" = Table.ReplaceValue(#"Ersetzter Wert14","ZAM","Maserati",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert16" = Table.ReplaceValue(#"Ersetzter Wert15","VR7","Citroen",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert49" = Table.ReplaceValue(#"Ersetzter Wert16","Volkswagen","VW",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert77" = Table.ReplaceValue(#"Ersetzter Wert49","Swift","Suzuki",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert78" = Table.ReplaceValue(#"Ersetzter Wert77"," Abarth","",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert79" = Table.ReplaceValue(#"Ersetzter Wert78"," Prof.","",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert80" = Table.ReplaceValue(#"Ersetzter Wert79","FORD","Ford",Replacer.ReplaceText,{"Brand"}),
+				    #"Ersetzter Wert81" = Table.ReplaceValue(#"Ersetzter Wert80"," NV 400 L2H2","",Replacer.ReplaceText,{"Brand"}),
+				    #"Gefilterte Zeilen2" = Table.SelectRows(#"Ersetzter Wert81", each ([Brand] <> null)),
+				    #"Ersetzte Fehler2" = Table.ReplaceErrorValues(#"Gefilterte Zeilen2", {{"Kd-Rechnung", 0}}),
+				    #"Ersetzter Wert84" = Table.ReplaceValue(#"Ersetzte Fehler2",null,0,Replacer.ReplaceValue,{"Kd-Rechnung"}),
+				    #"Geänderter Typ19" = Table.TransformColumnTypes(#"Ersetzter Wert84",{{"Kd-Rechnung", Currency.Type}}),
+				    #"Ersetzter Wert87" = Table.ReplaceValue(#"Geänderter Typ19","Lüdens","Lüdenscheid",Replacer.ReplaceText,{"Standort VK"}),
+				    #"Gefilterte Zeilen1" = Table.SelectRows(#"Ersetzter Wert87", each true),
+				    #"Ersetzter Wert88" = Table.ReplaceValue(#"Gefilterte Zeilen1","Lim","Limburg",Replacer.ReplaceText,{"Standort.1"}),
+				    #"Anzahl GW" = Table.AddColumn(#"Ersetzter Wert88", "Anzahl GW", each if [Art] = "GW" then 1 else 0),
+				    #"Geänderter Typ20" = Table.TransformColumnTypes(#"Anzahl GW",{{"Anzahl GW", Int64.Type}}),
+				    #"Anzahl NW" = Table.AddColumn(#"Geänderter Typ20", "Anzahl NW", each if [Art] = "NW" then 1 else 0),
+				    #"Geänderter Typ21" = Table.TransformColumnTypes(#"Anzahl NW",{{"Anzahl NW", Int64.Type}}),
+				    #"Anzahl VFW/WEW" = Table.AddColumn(#"Geänderter Typ21", "Anzahl VFW", each if [Art] = "VFW" then 1 else 0),
+				    #"Geänderter Typ22" = Table.TransformColumnTypes(#"Anzahl VFW/WEW",{{"Anzahl VFW", Int64.Type}}),
+				    #"Gefilterte Zeilen5" = Table.SelectRows(#"Geänderter Typ22", each ([#"Eigentümer Gesell."] <> "R2 " and [#"Eigentümer Gesell."] <> "Z3 ")),
+				    #"Anzahl TZ" = Table.AddColumn(#"Gefilterte Zeilen5", "Anzahl TZ", each if [Art] = "TZ" then 1 else 0),
+				    #"Geänderter Typ23" = Table.TransformColumnTypes(#"Anzahl TZ",{{"Anzahl TZ", Int64.Type}}),
+				    #"Gefilterte Zeilen3" = Table.SelectRows(#"Geänderter Typ23", each true),
+				    #"Anzahl Bestand" = Table.AddColumn(#"Gefilterte Zeilen3", "Anzahl Bestand", each if [Status] = "im Bestand" then 1 else 0),
+				    #"Geänderter Typ24" = Table.TransformColumnTypes(#"Anzahl Bestand",{{"Anzahl Bestand", Int64.Type}}),
+				    #"Hinzugefügte bedingte Spalte4" = Table.AddColumn(#"Geänderter Typ24", "Benutzerdefiniert", each if [Standort VK] = null then [Standort.1] else [Standort VK]),
+				    #"Geänderter Typ25" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte4",{{"Benutzerdefiniert", type text}}),
+				    #"Ersetzter Wert90" = Table.ReplaceValue(#"Geänderter Typ25","","?",Replacer.ReplaceValue,{"Benutzerdefiniert"}),
+				    #"Hinzugefügte bedingte Spalte5" = Table.AddColumn(#"Ersetzter Wert90", "Filiale", each if [Benutzerdefiniert] = "?" then [Eigentümer] else [Benutzerdefiniert]),
+				    #"Geänderter Typ26" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte5",{{"Filiale", type text}}),
+				    #"Sortierte Zeilen1" = Table.Sort(#"Geänderter Typ26",{{"Auftragsdatum", Order.Descending}}),
+				    #"Ersetzter Wert91" = Table.ReplaceValue(#"Sortierte Zeilen1","Lim","Limburg",Replacer.ReplaceText,{"Filiale"}),
+				    #"Hinzugefügte bedingte Spalte6" = Table.AddColumn(#"Ersetzter Wert91", "Zulassung", each if [WZ] = null then [#"EZ-Datum"] else [WZ]),
+				    #"Geänderter Typ27" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte6",{{"Zulassung", type date}}),
+				    #"Entfernte Spalten3" = Table.RemoveColumns(#"Geänderter Typ27",{"Benutzerdefiniert"}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Entfernte Spalten3", "AE NW ges.", each [Anzahl NW]+[Anzahl VFW]+[Anzahl TZ]),
+				    #"Geänderter Typ28" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte",{{"AE NW ges.", Int64.Type}}),
+				    #"Gefilterte Zeilen4" = Table.SelectRows(#"Geänderter Typ28", each true),
+				    #"Ersetzter Wert92" = Table.ReplaceValue(#"Gefilterte Zeilen4","Limburgburg","Limburg",Replacer.ReplaceText,{"Filiale"})
+				in
+				    #"Ersetzter Wert92"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

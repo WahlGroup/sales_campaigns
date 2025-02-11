@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 100
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 458
+          },
+          "nodeIndex": "PowerBI CarLinerSFTPData",
+          "nodeLineageTag": "f5f1d61d-73b1-4e5a-ba24-69790fc83ff7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1149,
+            "y": 323
+          },
+          "nodeIndex": "Data Fehlzeiten",
+          "nodeLineageTag": "a3fa81a3-b115-4201-b598-fa078ff3a70c",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1151,
+            "y": 5
+          },
+          "nodeIndex": "Datenaktualisierung",
+          "nodeLineageTag": "ef46912d-0172-44a2-84c1-784f07c44f9e",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 5
+          },
+          "nodeIndex": "Mastertabelle Datum",
+          "nodeLineageTag": "d5dfc7a7-079e-4174-b1f8-710e32ca9eee",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 350,
+            "y": 461
+          },
+          "nodeIndex": "Ziele für Volumen",
+          "nodeLineageTag": "429a7bfd-2114-450c-9a80-c71dde37c049",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1154,
+            "y": 527
+          },
+          "nodeIndex": "Berechnungen",
+          "nodeLineageTag": "459bbbaf-30a4-4eab-8258-06e1892ebd9c",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1155,
+            "y": 718
+          },
+          "nodeIndex": "Volmen_Mitarbeiter_zur_Bearbeitung",
+          "nodeLineageTag": "052afc67-60d6-4b9d-9363-da35e21bdf44",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 547,
+            "y": 5
+          },
+          "nodeIndex": "Standorte",
+          "nodeLineageTag": "2e5bc887-3abd-434c-8438-6468fd37053a",
+          "size": {
+            "height": 287,
+            "width": 324
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 876,
+            "y": 321.5
+          },
+          "nodeIndex": "Bestand neu",
+          "nodeLineageTag": "237cfc73-b6da-4bc7-958b-7bc8a0cb723f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 698,
+            "y": 641.5
+          },
+          "nodeIndex": "Grupp",
+          "nodeLineageTag": "c9fd41a8-f995-4fa6-9501-ef870bfe95d8",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Alle Tabellen",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": true,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Alle Tabellen",
+  "defaultDiagram": "Alle Tabellen"
+}

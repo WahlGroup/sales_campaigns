@@ -1,0 +1,42 @@
+table Standorte
+	lineageTag: 2e5bc887-3abd-434c-8438-6468fd37053a
+
+	column Ort
+		dataType: string
+		lineageTag: ccf11824-3cc3-4b69-9ac9-d3d07a0f9e8b
+		summarizeBy: none
+		sourceColumn: Ort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adresse Komplett'
+		dataType: string
+		lineageTag: d346ff53-85a8-4703-bf64-32e95df077da
+		summarizeBy: none
+		sourceColumn: Adresse Komplett
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Standorte = m
+		mode: import
+		source =
+				let
+				    Quelle = Excel.Workbook(File.Contents("Y:\Power_Bi\Auswertungen\07 Hilfstabellen\Alle_Standorte.xlsx"), null, true),
+				    Tabelle1_Sheet = Quelle{[Item="Tabelle1",Kind="Sheet"]}[Data],
+				    #"Höher gestufte Header" = Table.PromoteHeaders(Tabelle1_Sheet, [PromoteAllScalars=true]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Höher gestufte Header",{{"Marke", type text}, {"Standort", type text}, {"Filial Nr.", Int64.Type}, {"Straße", type text}, {"PLZ", Int64.Type}, {"Ort", type text}, {"Gesellschafft", type text}, {"Gesellschaft kurz", type text}, {"F1 Firma", Int64.Type}, {"F1 Filiale Nr.", Int64.Type}, {"F1 Firma (ohne 0)", Int64.Type}, {"F1 Filiale (ohne 0)", Int64.Type}, {"Händlernummer", Int64.Type}}),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Geänderter Typ", each [Marke] = "Ford" or [Marke] = "Renault" or [Marke] = "Renault/Dacia" or [Marke] = "Skoda" or [Marke] = "Volumen"),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Gefilterte Zeilen",{"Ort", "PLZ", "Straße"}),
+				    #"Duplizierte Spalte" = Table.DuplicateColumn(#"Andere entfernte Spalten", "Ort", "Ort - Kopie"),
+				    #"Gefilterte Zeilen1" = Table.SelectRows(#"Duplizierte Spalte", each ([Ort] <> "Neuenahr-Ahrweiler" and [Ort] <> "Neuwied" and [Ort] <> "Werdohl2")),
+				    #"Zusammengeführte Spalte eingefügt" = Table.AddColumn(#"Gefilterte Zeilen1", "PLZ Ort", each Text.Combine({Text.From([PLZ], "de-DE"), [#"Ort - Kopie"]}, " "), type text),
+				    #"Zusammengeführte Spalte eingefügt1" = Table.AddColumn(#"Zusammengeführte Spalte eingefügt", "Adresse Komplett", each Text.Combine({[Straße], [PLZ Ort]}, ", "), type text),
+				    #"Andere entfernte Spalten1" = Table.SelectColumns(#"Zusammengeführte Spalte eingefügt1",{"Ort", "Adresse Komplett"}),
+				    #"Gefilterte Zeilen2" = Table.SelectRows(#"Andere entfernte Spalten1", each [Ort] <> "Lüdenscheid" and [Ort] <> "R2")
+				in
+				    #"Gefilterte Zeilen2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

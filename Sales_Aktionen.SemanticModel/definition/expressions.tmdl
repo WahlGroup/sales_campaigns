@@ -1,0 +1,74 @@
+expression Parameter1 = Beispieldatei meta [IsParameterQuery=true, BinaryIdentifier=Beispieldatei, Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 2dca8056-3f0b-4ed5-afee-a3aab5838bde
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren\Hilfsprogrammabfragen'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Beispieldatei transformieren' =
+		let
+		    Quelle = Excel.Workbook(Parameter1, null, true),
+		    Abwesenheitsliste_Sheet = Quelle{[Item="Abwesenheitsliste",Kind="Sheet"]}[Data],
+		    #"Höher gestufte Header" = Table.PromoteHeaders(Abwesenheitsliste_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Höher gestufte Header"
+	lineageTag: 8c85497e-c23c-4ff4-85f7-9c770d30089c
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren'
+
+	annotation PBI_ResultType = Table
+
+expression Beispieldatei =
+		let
+		    Quelle = Folder.Files("Y:\Power_Bi\Auswertungen\04 auf Anfrage\Data Fehlzeiten"),
+		    #"Andere entfernte Spalten" = Table.SelectColumns(Quelle,{"Content"}),
+		    Navigation1 = #"Andere entfernte Spalten"{0}[Content]
+		in
+		    Navigation1
+	lineageTag: 00632af2-a18f-4ffe-829f-437f6a6e50f0
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren\Hilfsprogrammabfragen'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Datei transformieren' =
+		let
+		    Quelle = (Parameter1 as binary) => let
+		    Quelle = Excel.Workbook(Parameter1, null, true),
+		    Abwesenheitsliste_Sheet = Quelle{[Item="Abwesenheitsliste",Kind="Sheet"]}[Data],
+		    #"Höher gestufte Header" = Table.PromoteHeaders(Abwesenheitsliste_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Höher gestufte Header"
+		in
+		    Quelle
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Beispieldatei transformieren""}" ]
+	lineageTag: 70334fd2-0c1a-4d4a-ac35-c2ac097d2e20
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren\Hilfsprogrammabfragen'
+
+	annotation PBI_ResultType = Function
+
+expression 'Datei Bestand transformieren (5)' =
+		let
+		    Quelle = (Parameter1 as binary) => let
+		    Quelle = Excel.Workbook(Parameter1, null, true),
+		    Fahrzeugliste_Sheet = Quelle{[Item="Fahrzeugliste",Kind="Sheet"]}[Data],
+		    #"Höher gestufte Header" = Table.PromoteHeaders(Fahrzeugliste_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Höher gestufte Header"
+		in
+		    Quelle
+	lineageTag: b81af670-5804-4758-9fe0-7a80f12f9895
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Beispieldatei (5)' =
+		let
+		    Quelle = Folder.Files("Y:\Power_Bi\Auswertungen\01 täglich\05 Wahl Group\Sales Volumen\Bestand neu"),
+		    Navigation1 = Quelle{0}[Content]
+		in
+		    Navigation1
+	lineageTag: aca2e867-d207-45de-8273-8f72c4030695
+	queryGroup: 'Datei aus  Data Fehlzeiten  transformieren'
+
+	annotation PBI_ResultType = Binary
+

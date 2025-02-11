@@ -1,0 +1,754 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "480b5391bc9eb0b070ce",
+  "position": {
+    "x": 0,
+    "y": 402.67477203647417,
+    "z": 23000,
+    "height": 269.42249240121583,
+    "width": 1188.5714285714287,
+    "tabOrder": 23000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Marke"
+                }
+              },
+              "queryRef": "Bestand neu.Marke",
+              "nativeQueryRef": "Marke"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Modell"
+                }
+              },
+              "queryRef": "Bestand neu.Modell",
+              "nativeQueryRef": "Modell"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Modellversion"
+                }
+              },
+              "queryRef": "Bestand neu.Modellversion",
+              "nativeQueryRef": "Modellversion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Fahrgestell-Nr (VIN)"
+                }
+              },
+              "queryRef": "Bestand neu.Fahrgestell-Nr (VIN)",
+              "nativeQueryRef": "Fahrgestell-Nr (VIN)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Bestand neu"
+                        }
+                      },
+                      "Property": "Standtage"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Bestand neu.Standtage)",
+              "nativeQueryRef": "Summe von Standtage",
+              "displayName": "Standtage"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Bestand neu"
+                        }
+                      },
+                      "Property": "Verkaufspreis "
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(Bestand neu.Verkaufspreis )",
+              "nativeQueryRef": "Verkaufspreis ",
+              "displayName": "Verkaufspreis "
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Fz-Status"
+                }
+              },
+              "queryRef": "Bestand neu.Fz-Status",
+              "nativeQueryRef": "Fz-Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Firma"
+                }
+              },
+              "queryRef": "Bestand neu.Firma",
+              "nativeQueryRef": "Firma"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Filiale"
+                }
+              },
+              "queryRef": "Bestand neu.Filiale",
+              "nativeQueryRef": "Filiale"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Erstzulassung"
+                }
+              },
+              "queryRef": "Bestand neu.Erstzulassung",
+              "nativeQueryRef": "Erstzulassung"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bestand neu"
+                    }
+                  },
+                  "Property": "Reserviert bis"
+                }
+              },
+              "queryRef": "Bestand neu.Reserviert bis",
+              "nativeQueryRef": "Reserviert bis"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Bestand neu"
+                  }
+                },
+                "Property": "Reserviert bis"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.753797029944764D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Marke"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "57.92272840560413D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Modell"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "387.22455212704836D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Modellversion"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.8983680308167D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Bestand neu.Standtage)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.75104754628488D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Bestand neu.Verkaufspreis )"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124.67985580860709D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Fahrgestell-Nr (VIN)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "57D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Fz-Status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.34345184753818D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Firma"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.67171492540689D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Filiale"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "34D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Eingangsdatum.Variation.Datumshierarchie.Jahr"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Eingangsdatum.Variation.Datumshierarchie.Quartal"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Eingangsdatum.Variation.Datumshierarchie.Monat"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "29D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Eingangsdatum.Variation.Datumshierarchie.Tag"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "34D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Reserviert bis.Variation.Datumshierarchie.Jahr"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Reserviert bis.Variation.Datumshierarchie.Quartal"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "47D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Reserviert bis.Variation.Datumshierarchie.Monat"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "29D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Reserviert bis.Variation.Datumshierarchie.Tag"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.44987605758904D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Reserviert bis"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "34D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Erstzulassung.Variation.Datumshierarchie.Jahr"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Erstzulassung.Variation.Datumshierarchie.Quartal"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "62D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Erstzulassung.Variation.Datumshierarchie.Monat"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "29D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Erstzulassung.Variation.Datumshierarchie.Tag"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Bestand neu.Erstzulassung"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Bestand neu.Standtage)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Bestand neu.Verkaufspreis )"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter3113122165236b644e1a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Bestand neu"
+              }
+            },
+            "Property": "Stand"
+          }
+        },
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "Bestand neu",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "b"
+                        }
+                      },
+                      "Property": "Stand"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 2
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

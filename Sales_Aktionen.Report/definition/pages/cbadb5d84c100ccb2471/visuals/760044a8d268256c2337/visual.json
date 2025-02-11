@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "760044a8d268256c2337",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 331.81296144380639,
+    "width": 1195.9967186218212,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ziele für Volumen"
+                    }
+                  },
+                  "Property": "Standort"
+                }
+              },
+              "queryRef": "Ziele für Volumen.Standort",
+              "nativeQueryRef": "Ziele",
+              "displayName": "Ziele"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Ziele für Volumen"
+                        }
+                      },
+                      "Property": "ges. Fahrzeugziel/Tag"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Ziele für Volumen.ges. Fahrzeugziel/Tag)",
+              "nativeQueryRef": "ges. Fahrzeuge",
+              "displayName": "ges. Fahrzeuge"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

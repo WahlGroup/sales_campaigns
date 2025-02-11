@@ -1,0 +1,36 @@
+table Grupp
+	lineageTag: c9fd41a8-f995-4fa6-9501-ef870bfe95d8
+
+	column Standtage
+		dataType: int64
+		formatString: 0
+		lineageTag: 6086009d-8021-4fc2-849c-916a8bfdc382
+		summarizeBy: none
+		sourceColumn: Standtage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gruppe
+		dataType: string
+		lineageTag: 865fadad-f9ca-4868-bf72-6854e38a879f
+		summarizeBy: none
+		sourceColumn: Gruppe
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grupp = m
+		mode: import
+		queryGroup: 'Datei aus  Data Fehlzeiten  transformieren'
+		source =
+				let
+				    Quelle = Excel.Workbook(File.Contents("Y:\Power_Bi\Auswertungen\07 Hilfstabellen\Hilfstabelle Renault_Dacia.xlsx"), null, true),
+				    Grupp_Sheet = Quelle{[Item="Grupp",Kind="Sheet"]}[Data],
+				    #"Höher gestufte Header" = Table.PromoteHeaders(Grupp_Sheet, [PromoteAllScalars=true]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Höher gestufte Header",{{"Standtage", Int64.Type}, {"Gruppe", type text}})
+				in
+				    #"Geänderter Typ"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

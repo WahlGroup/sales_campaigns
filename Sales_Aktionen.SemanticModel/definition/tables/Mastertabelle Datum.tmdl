@@ -1,0 +1,114 @@
+table 'Mastertabelle Datum'
+	lineageTag: d5dfc7a7-079e-4174-b1f8-710e32ca9eee
+
+	column Datum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 32d13ae0-9b70-402b-b9a6-206ea1431f58
+		summarizeBy: none
+		sourceColumn: Datum
+
+		variation Variation
+			isDefault
+			relationship: 00629c4c-2bc3-442b-9609-7619408007a0
+			defaultHierarchy: LocalDateTable_307875b1-f324-4003-8420-00e43e67a3cb.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Arbeitstage im Jahr'
+		dataType: string
+		lineageTag: 836a67bd-a951-4706-bc3a-b52ed7c6377e
+		summarizeBy: none
+		sourceColumn: Arbeitstage im Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Arbeitstage im Monat'
+		dataType: string
+		lineageTag: 1886a211-4d45-4f94-a342-869e6463020b
+		summarizeBy: none
+		sourceColumn: Arbeitstage im Monat
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Arbeitstag im Monat'
+		dataType: string
+		lineageTag: 24ecde63-2714-4d37-a5d6-5e1479a1dea0
+		summarizeBy: none
+		sourceColumn: Arbeitstag im Monat
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Arbeitstag im Jahr'
+		dataType: string
+		lineageTag: b680015d-0e4a-40e6-809d-714349adbe97
+		summarizeBy: none
+		sourceColumn: Arbeitstag im Jahr
+
+		annotation SummarizationSetBy = Automatic
+
+	column Feiertage
+		dataType: string
+		lineageTag: 171f609c-d5dc-46b1-a758-39aac7741262
+		summarizeBy: none
+		sourceColumn: Feiertage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arbeitstage
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 40ebfec4-944d-4c87-b3a3-14647257469b
+		summarizeBy: none
+		sourceColumn: Arbeitstage
+
+		variation Variation
+			isDefault
+			relationship: c68165f3-0e40-44d7-b2da-9e81c516d53a
+			defaultHierarchy: LocalDateTable_fa26a4a2-0d2d-410f-8442-36629404fca2.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Woche #'
+		dataType: string
+		lineageTag: e5b3e8de-f48c-4231-9895-f11ae1ac2afd
+		summarizeBy: none
+		sourceColumn: Woche #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Jahr #'
+		dataType: string
+		lineageTag: 969ab60a-de5b-4623-87d7-f358b2d0e105
+		summarizeBy: none
+		sourceColumn: Jahr #
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Mastertabelle Datum' = m
+		mode: import
+		source =
+				let
+				    Quelle = Excel.Workbook(File.Contents("Y:\Power_Bi\Auswertungen\05 Datumstabelle\Mastertabelle_Datum.xlsx"), null, true),
+				    #"Mastertabelle Datum_Sheet" = Quelle{[Item="Mastertabelle Datum",Kind="Sheet"]}[Data],
+				    #"Höher gestufte Header" = Table.PromoteHeaders(#"Mastertabelle Datum_Sheet", [PromoteAllScalars=true]),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Höher gestufte Header",{"Datum", "Arbeitstage im Jahr", "Arbeitstage im Monat", "Arbeitstag im Monat", "Arbeitstag im Jahr", "Feiertage", "Arbeitstage", "Woche #", "IsoJahr IsoKW", "Monat (MMMM)", "Jahr #"}),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Andere entfernte Spalten", each true),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Gefilterte Zeilen", "IsoJahr IsoKW", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"IsoJahr IsoKW.1", "IsoJahr IsoKW.2"}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Spalte nach Trennzeichen teilen",{"IsoJahr IsoKW.1"}),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Entfernte Spalten",{{"Datum", type date}, {"Jahr #", type text}}),
+				    #"Andere entfernte Spalten1" = Table.SelectColumns(#"Geänderter Typ",{"Datum", "Arbeitstage im Jahr", "Arbeitstage im Monat", "Arbeitstag im Monat", "Arbeitstag im Jahr", "Feiertage", "Arbeitstage", "Woche #", "Jahr #"}),
+				    #"Sortierte Zeilen" = Table.Sort(#"Andere entfernte Spalten1",{{"Datum", Order.Descending}}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Sortierte Zeilen",{{"Arbeitstage", type date}}),
+				    #"Sortierte Zeilen1" = Table.Sort(#"Geänderter Typ1",{{"Arbeitstage", Order.Descending}})
+				in
+				    #"Sortierte Zeilen1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,106 @@
+table 'Data Fehlzeiten'
+	isHidden
+	lineageTag: a3fa81a3-b115-4201-b598-fa078ff3a70c
+
+	column Datum
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4fc94b68-4557-4b09-b44a-07af73717fc3
+		summarizeBy: none
+		sourceColumn: Datum
+
+		variation Variation
+			isDefault
+			relationship: 9d517b3f-adb5-45f8-b0b9-3469f043aed7
+			defaultHierarchy: LocalDateTable_1e1d2b39-a3ae-4b73-aebe-ed332fb14a76.Datumshierarchie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Mitarbeiter Nr.'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 566cf506-5f56-40bc-b9e0-5198c65090c5
+		summarizeBy: sum
+		sourceColumn: Mitarbeiter Nr.
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		lineageTag: ffb82177-7c9b-47ad-a724-235b92d8a13b
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grund.1'
+		dataType: string
+		isHidden
+		lineageTag: 41931c77-6600-4a17-8d4b-52714c5d2b15
+		summarizeBy: none
+		sourceColumn: Grund.1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abwesenheit
+		dataType: double
+		isHidden
+		lineageTag: 5c528676-51c0-4e72-b2f7-caff5048125c
+		summarizeBy: sum
+		sourceColumn: Abwesenheit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Data Fehlzeiten' = m
+		mode: import
+		source =
+				let
+				    Quelle = Folder.Files("Y:\Power_Bi\Auswertungen\04 auf Anfrage\Data Fehlzeiten"),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(Quelle,{"Content"}),
+				    #"Gefilterte ausgeblendete Dateien1" = Table.SelectRows(#"Andere entfernte Spalten", each [Attributes]?[Hidden]? <> true),
+				    #"Benutzerdefinierte Funktion aufrufen1" = Table.AddColumn(#"Gefilterte ausgeblendete Dateien1", "Datei transformieren", each #"Datei transformieren"([Content])),
+				    #"Andere entfernte Spalten1" = Table.SelectColumns(#"Benutzerdefinierte Funktion aufrufen1", {"Datei transformieren"}),
+				    #"Erweiterte Datei transformieren" = Table.ExpandTableColumn(#"Andere entfernte Spalten1", "Datei transformieren", {"Datum", "Mitarbeiter", "Name", "Grund der Abwesenheit"}, {"Datei transformieren.Datum", "Datei transformieren.Mitarbeiter", "Datei transformieren.Name", "Datei transformieren.Grund der Abwesenheit"}),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Erweiterte Datei transformieren",{{"Datei transformieren.Mitarbeiter", Int64.Type}, {"Datei transformieren.Datum", type date}}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Geänderter Typ",{{"Datei transformieren.Datum", "Datum"}, {"Datei transformieren.Mitarbeiter", "Mitarbeiter Nr."}, {"Datei transformieren.Name", "Name"}}),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Umbenannte Spalten", "Datei transformieren.Grund der Abwesenheit", Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.Csv, true), {"Datei transformieren.Grund der Abwesenheit.1", "Datei transformieren.Grund der Abwesenheit.2"}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen",{{"Datei transformieren.Grund der Abwesenheit.1", type text}, {"Datei transformieren.Grund der Abwesenheit.2", type text}}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Geänderter Typ1",")","",Replacer.ReplaceText,{"Datei transformieren.Grund der Abwesenheit.2"}),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(#"Ersetzter Wert"," ","",Replacer.ReplaceText,{"Datei transformieren.Grund der Abwesenheit.1"}),
+				    #"Hinzugefügte bedingte Spalte" = Table.AddColumn(#"Ersetzter Wert1", "Grund", each if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Feiertag") then "Feiertag" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Krank") then "Krankheit" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Urlaub") then "Urlaub" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Arzt") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Wiedereing") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Fortbild") then "Schulung" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Schulung") then "Schulung" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Muttersc") then "Mutterschutz/Erziehungsurlaub" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Betreuung") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "UnentschuldigtesFehlen") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Eltern") then "Mutterschutz/Erziehungsurlaub" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "REHA") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Berufsschule") then "Berufsschule " else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Sonderurl") then "Urlaub" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Beschäftigungsver") then "Krank" else if Text.Contains([Datei transformieren.Grund der Abwesenheit.1], "Pause") then "Pause" else "Prüfen"),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Hinzugefügte bedingte Spalte", each ([Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeit Nachmittag " and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeit nehmen " and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeit Vormittag " and [Datei transformieren.Grund der Abwesenheit.1] <> "GleitzeitNachmittag" and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeitnehmen" and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeitnehmen13:00" and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeitnehmen14:00" and [Datei transformieren.Grund der Abwesenheit.1] <> "Gleitzeitnehmen15:00" and [Datei transformieren.Grund der Abwesenheit.1] <> "GleitzeitVormittag") and ([Grund] <> "Prüfen")),
+				    #"Spaltentrennung nach Zeichenwechsel" = Table.SplitColumn(#"Gefilterte Zeilen", "Datei transformieren.Grund der Abwesenheit.2", Splitter.SplitTextByCharacterTransition((c) => not List.Contains({"0".."9"}, c), {"0".."9"}), {"Datei transformieren.Grund der Abwesenheit.2.1", "Datei transformieren.Grund der Abwesenheit.2.2"}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Spaltentrennung nach Zeichenwechsel",{"Datei transformieren.Grund der Abwesenheit.2.2"}),
+				    #"Andere entfernte Spalten2" = Table.SelectColumns(#"Entfernte Spalten",{"Datum", "Mitarbeiter Nr.", "Name", "Grund", "Datei transformieren.Grund der Abwesenheit.2.1"}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Andere entfernte Spalten2",{{"Grund", type text}}),
+				    #"Zusammengeführte Spalten" = Table.CombineColumns(#"Geänderter Typ2",{"Grund", "Datei transformieren.Grund der Abwesenheit.2.1"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Grund.1"),
+				    #"Ersetzter Wert2" = Table.ReplaceValue(#"Zusammengeführte Spalten","  "," ",Replacer.ReplaceText,{"Grund.1"}),
+				    #"Hinzugefügte bedingte Spalte1" = Table.AddColumn(#"Ersetzter Wert2", "Abwesenheit", each if Text.Contains([Grund.1], "mittag") then 0.5 else 1),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte1",{{"Abwesenheit", type number}}),
+				    #"Gefilterte Zeilen1" = Table.SelectRows(#"Geänderter Typ3", each true)
+				in
+				    #"Gefilterte Zeilen1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

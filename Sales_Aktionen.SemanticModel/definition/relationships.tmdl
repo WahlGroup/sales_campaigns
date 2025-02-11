@@ -1,0 +1,143 @@
+relationship 3be25917-0569-4780-96e3-4fd725a67bf9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.Reservierungsende
+	toColumn: LocalDateTable_11438529-3d85-41d6-a8ed-1dda3883720b.Date
+
+relationship eee985a3-30a9-4335-981e-85c5b566aa63
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.EZ-Datum
+	toColumn: LocalDateTable_6cb4f3bf-a882-4441-9249-cb4e65b531ac.Date
+
+relationship d656045e-eff4-45b0-bc90-eb24d694d9d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.WZ
+	toColumn: LocalDateTable_06c51400-5e2d-445b-9454-efa25a4a05b7.Date
+
+relationship bc2c876d-4e04-4812-a8df-628ef34278f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.Eingang
+	toColumn: LocalDateTable_560b2791-8454-455b-bc4b-330d09387be7.Date
+
+relationship fb5ae60d-5a08-42f0-a94f-8a0e2a9755f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.Abmeldedat
+	toColumn: LocalDateTable_5e3e8e03-7cef-4acf-9c84-749b34de41e7.Date
+
+relationship c0b773ae-b511-4fb1-8888-ed1f0cc02721
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.'Genehmigt Datum.1'
+	toColumn: LocalDateTable_9c4aa017-24d0-497e-9234-270ecc8f9548.Date
+
+relationship 227a005b-537f-42e0-b716-1a32bb094647
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.'Eingereicht Datum.1'
+	toColumn: LocalDateTable_73def2c8-9cfc-4602-ae55-fe4b1724eef2.Date
+
+relationship 17673cff-84c7-468a-a838-142f8b579c79
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.'Fakturadatum.1'
+	toColumn: LocalDateTable_4cc1d224-1cfd-40ed-b9bc-e718bfbd1559.Date
+
+relationship 00629c4c-2bc3-442b-9609-7619408007a0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Mastertabelle Datum'.Datum
+	toColumn: LocalDateTable_307875b1-f324-4003-8420-00e43e67a3cb.Date
+
+relationship 495f3d2d-a94a-4241-9326-f3460cf38969
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Datenaktualisierung.Datenaktualisierung
+	toColumn: LocalDateTable_cabf5da3-1d10-488c-b64b-2d0ca40d1430.Date
+
+relationship a0832c06-dc2a-4269-92fb-454134fd77ee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Datenaktualisierung.'Tag heute'
+	toColumn: LocalDateTable_124669d6-5714-4a1b-9723-fefeb672e654.Date
+
+relationship 0dd4dc44-01e4-4ffe-92b9-cc785ab4ed7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Datenaktualisierung.Vortag
+	toColumn: LocalDateTable_97c24cc4-5418-40f1-906f-8f55658677c0.Date
+
+relationship 9d517b3f-adb5-45f8-b0b9-3469f043aed7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data Fehlzeiten'.Datum
+	toColumn: LocalDateTable_1e1d2b39-a3ae-4b73-aebe-ed332fb14a76.Date
+
+relationship c68165f3-0e40-44d7-b2da-9e81c516d53a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Mastertabelle Datum'.Arbeitstage
+	toColumn: LocalDateTable_fa26a4a2-0d2d-410f-8442-36629404fca2.Date
+
+relationship 803f9d65-82bb-4dae-948d-e37e31108097
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.'Auftragsdatum - Kopie'
+	toColumn: LocalDateTable_8c354c49-5d12-481a-92f7-d91a8c2661df.Date
+
+relationship 44ba22b0-dc02-4164-89d2-571686dbc951
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Ziele für Volumen'.'Datum - Kopie'
+	toColumn: LocalDateTable_b8d15389-e4d0-4837-b824-6cea3a4cce9e.Date
+
+relationship 16310aee-53a3-2e06-ae76-654128cdc049
+	fromColumn: 'Ziele für Volumen'.Datum
+	toColumn: 'Mastertabelle Datum'.Datum
+
+relationship f858f8dc-b55a-9276-722f-79ffe73ec717
+	fromColumn: 'PowerBI CarLinerSFTPData'.Auftragsdatum
+	toColumn: 'Mastertabelle Datum'.Datum
+
+relationship fa5750a0-87ac-43fa-8ce3-56567f7d397b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PowerBI CarLinerSFTPData'.Zulassung
+	toColumn: LocalDateTable_71647e6a-d349-4282-8bef-febb780c3d9d.Date
+
+relationship e864fdeb-aaed-ef4e-ba2d-c66d3851db59
+	toCardinality: many
+	fromColumn: 'Ziele für Volumen'.Standort
+	toColumn: Standorte.Ort
+
+relationship 3dee537a-66f8-a559-f29c-4df16cfdae85
+	toCardinality: many
+	fromColumn: 'PowerBI CarLinerSFTPData'.Filiale
+	toColumn: Standorte.Ort
+
+relationship 854e1737-5c76-4fbd-b337-9b029aee727b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.Stand
+	toColumn: LocalDateTable_36367285-88f4-4eab-a1f2-119e2829cddf.Date
+
+relationship af4ef171-c164-4e49-94c5-39949e8d50b9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.Erstzulassung
+	toColumn: LocalDateTable_259f7486-8310-40d0-a66d-a43ccfa906c5.Date
+
+relationship b051fb59-1e6f-42bf-bfc4-6cf5a12cc49f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.'Reserviert bis'
+	toColumn: LocalDateTable_2a22d365-cd81-4bbb-99a1-348afb5b89ec.Date
+
+relationship bdb78cb6-bd6c-4d71-8427-7c37cae93e65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.'Datum der letzten Preisanpassung'
+	toColumn: LocalDateTable_0ad5f22c-8a78-4669-8612-c519a5841ccd.Date
+
+relationship b5e51417-ca28-40d8-9868-05ea1085e0f0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.HU
+	toColumn: LocalDateTable_0a6a232a-af2f-4d46-bf2b-ba14400442be.Date
+
+relationship 1bafc692-e1b2-4579-a87e-552fc0065ba7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Bestand neu'.Eingangsdatum
+	toColumn: LocalDateTable_329d424b-9ba1-42a0-ab69-2e06e77e3cef.Date
+
+relationship AutoDetected_2f6e4154-5274-4e87-b93a-8cc62c118dc5
+	fromColumn: 'Bestand neu'.Standtage
+	toColumn: Grupp.Standtage
+
+relationship 67a30198-4cf1-5a7f-1974-e069e4a3d133
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Bestand neu'.Filiale
+	toColumn: Standorte.Ort
+

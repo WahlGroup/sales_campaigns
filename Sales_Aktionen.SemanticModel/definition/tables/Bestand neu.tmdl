@@ -1,0 +1,570 @@
+table 'Bestand neu'
+	lineageTag: 237cfc73-b6da-4bc7-958b-7bc8a0cb723f
+
+	column Stand
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3cda6523-f1f8-4940-a52a-18f6a66c5ec6
+		summarizeBy: none
+		sourceColumn: Stand
+
+		variation Variation
+			isDefault
+			relationship: 854e1737-5c76-4fbd-b337-9b029aee727b
+			defaultHierarchy: LocalDateTable_36367285-88f4-4eab-a1f2-119e2829cddf.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Fz-Status
+		dataType: string
+		lineageTag: 2c8600ec-927c-465e-9d82-4af95aea2832
+		summarizeBy: none
+		sourceColumn: Fz-Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bilder?
+		dataType: string
+		lineageTag: d30e6e4d-5754-4194-9fdf-28227e9a11b4
+		summarizeBy: none
+		sourceColumn: Bilder?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fz-Standort.1'
+		dataType: string
+		lineageTag: 71b6ac90-bbde-4f45-ae99-adcdcc6d7965
+		summarizeBy: none
+		sourceColumn: Fz-Standort.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fz-Standort.2'
+		dataType: string
+		lineageTag: 97357c99-16dc-4555-9c4b-12e6df74e7f5
+		summarizeBy: none
+		sourceColumn: Fz-Standort.2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fahrgestell-Nr (VIN)'
+		dataType: string
+		lineageTag: 84d40fba-ee09-4aa7-970f-a32a0cb817e5
+		summarizeBy: none
+		sourceColumn: Fahrgestell-Nr (VIN)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fz-Art
+		dataType: string
+		lineageTag: 30b8e54f-ea5e-42a8-9d78-5558d42825c5
+		summarizeBy: none
+		sourceColumn: Fz-Art
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marke
+		dataType: string
+		lineageTag: e09a193b-969c-4507-9b6d-2b7af20bc012
+		summarizeBy: none
+		sourceColumn: Marke
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modell
+		dataType: string
+		lineageTag: b084b587-c5f9-46cc-8374-2f45e10042d3
+		summarizeBy: none
+		sourceColumn: Modell
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modellversion
+		dataType: string
+		lineageTag: f53ac939-afef-4861-9471-27b677956d0e
+		summarizeBy: none
+		sourceColumn: Modellversion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hinweis
+		dataType: string
+		lineageTag: 54b54911-c6e8-4e90-9bd7-63251ae37358
+		summarizeBy: none
+		sourceColumn: Hinweis
+
+		annotation SummarizationSetBy = Automatic
+
+	column Erstzulassung
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e25423f5-f0f3-4cf8-befa-669f1787fe1a
+		summarizeBy: none
+		sourceColumn: Erstzulassung
+
+		variation Variation
+			isDefault
+			relationship: af4ef171-c164-4e49-94c5-39949e8d50b9
+			defaultHierarchy: LocalDateTable_259f7486-8310-40d0-a66d-a43ccfa906c5.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column KM
+		dataType: int64
+		formatString: 0
+		lineageTag: 484301f9-7b80-4077-bda9-03a7bc7b559e
+		summarizeBy: sum
+		sourceColumn: KM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Farbe (Text).'
+		dataType: string
+		lineageTag: bd85c35e-cb40-4c94-bd0d-7ea7176700e3
+		summarizeBy: none
+		sourceColumn: Farbe (Text).
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ausstattung
+		dataType: string
+		lineageTag: df27e89d-5b83-41c1-9d87-330babc2da5a
+		summarizeBy: none
+		sourceColumn: Ausstattung
+
+		annotation SummarizationSetBy = Automatic
+
+	column Standtage
+		dataType: int64
+		formatString: 0
+		lineageTag: d7d97fd1-9aa2-43b3-a00b-68f39b1a7a68
+		summarizeBy: none
+		sourceColumn: Standtage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Listenpreis '
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fafc48b-0580-4541-9c08-1f9afea65be4
+		summarizeBy: sum
+		sourceColumn: "Listenpreis "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Verkaufspreis '
+		dataType: double
+		lineageTag: 152882d2-2de0-4afb-8e04-e321a779bab3
+		summarizeBy: sum
+		sourceColumn: "Verkaufspreis "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sonderpreis '
+		dataType: int64
+		formatString: 0
+		lineageTag: f16ddc6f-9268-43f9-9697-f932d5aabed7
+		summarizeBy: sum
+		sourceColumn: "Sonderpreis "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Einkaufspreis '
+		dataType: double
+		lineageTag: 28b328fd-2e73-4c3e-a51f-79b09091c509
+		summarizeBy: sum
+		sourceColumn: "Einkaufspreis "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Interne Rechnungen '
+		dataType: string
+		lineageTag: fa94dc56-4815-45b5-a029-ffe721ee6e74
+		summarizeBy: none
+		sourceColumn: "Interne Rechnungen "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reserviert bis'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 00523bcd-fdac-4af0-a21d-da1e094d174a
+		summarizeBy: none
+		sourceColumn: Reserviert bis
+
+		variation Variation
+			isDefault
+			relationship: b051fb59-1e6f-42bf-bfc4-6cf5a12cc49f
+			defaultHierarchy: LocalDateTable_2a22d365-cd81-4bbb-99a1-348afb5b89ec.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Name Vorbesitzer'
+		dataType: string
+		lineageTag: 0612542d-a4a5-47b1-8f0b-38a579e86cdc
+		summarizeBy: none
+		sourceColumn: Name Vorbesitzer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unique Vehicle ID'
+		dataType: string
+		lineageTag: 1e3f8868-461d-4555-91aa-2192e82c0ed9
+		summarizeBy: none
+		sourceColumn: Unique Vehicle ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Datum der letzten Preisanpassung'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2d9169df-57ea-487b-8c29-135bd95eae28
+		summarizeBy: none
+		sourceColumn: Datum der letzten Preisanpassung
+
+		variation Variation
+			isDefault
+			relationship: bdb78cb6-bd6c-4d71-8427-7c37cae93e65
+			defaultHierarchy: LocalDateTable_0ad5f22c-8a78-4669-8612-c519a5841ccd.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'WLTP gültig'
+		dataType: string
+		lineageTag: d98da265-2b12-4c79-b0ef-79dabcfa0d95
+		summarizeBy: none
+		sourceColumn: WLTP gültig
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Neu angelegt?'
+		dataType: string
+		lineageTag: da66f22e-5a8f-49a8-8c76-d7ab44e1f86c
+		summarizeBy: none
+		sourceColumn: Neu angelegt?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dokumente?
+		dataType: string
+		lineageTag: e91e3b7d-41b3-44ff-9245-b4b80e3715de
+		summarizeBy: none
+		sourceColumn: Dokumente?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Börsen-Status
+		dataType: string
+		lineageTag: 7f46448d-71f5-40e2-908d-2c2d958ddc86
+		summarizeBy: none
+		sourceColumn: Börsen-Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Türen
+		dataType: int64
+		formatString: 0
+		lineageTag: 53479b6b-14e4-42ad-b59f-65cdbced3e19
+		summarizeBy: sum
+		sourceColumn: Türen
+
+		annotation SummarizationSetBy = Automatic
+
+	column HU
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7ffb6a1e-a90c-46fb-80b0-284000d00140
+		summarizeBy: none
+		sourceColumn: HU
+
+		variation Variation
+			isDefault
+			relationship: b5e51417-ca28-40d8-9868-05ea1085e0f0
+			defaultHierarchy: LocalDateTable_0a6a232a-af2f-4d46-bf2b-ba14400442be.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Bauart
+		dataType: string
+		lineageTag: 109a73d6-2ebc-41b7-9ccf-fdf72672dd6a
+		summarizeBy: none
+		sourceColumn: Bauart
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EZ Werk'
+		dataType: string
+		lineageTag: d1f080ea-bc33-4802-aa95-26a112b480a3
+		summarizeBy: none
+		sourceColumn: EZ Werk
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unfall?
+		dataType: string
+		lineageTag: d737f1b2-7fcd-4e9d-975a-e3287989416b
+		summarizeBy: none
+		sourceColumn: Unfall?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Eingangsdatum
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f98c4809-0709-440a-ace3-736da3079e2c
+		summarizeBy: none
+		sourceColumn: Eingangsdatum
+
+		variation Variation
+			isDefault
+			relationship: 1bafc692-e1b2-4579-a87e-552fc0065ba7
+			defaultHierarchy: LocalDateTable_329d424b-9ba1-42a0-ab69-2e06e77e3cef.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Wiederzulassungs-Kennzeichen
+		dataType: string
+		lineageTag: 870cd3f6-b98f-4f50-a1f5-48679220cecf
+		summarizeBy: none
+		sourceColumn: Wiederzulassungs-Kennzeichen
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bemerkung
+		dataType: string
+		lineageTag: 90367f9c-2371-47db-b0c2-812afaab3050
+		summarizeBy: none
+		sourceColumn: Bemerkung
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kategorie
+		dataType: string
+		lineageTag: 602148be-ae8d-4b19-bc29-5b04e41f719d
+		summarizeBy: none
+		sourceColumn: Kategorie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Polster (Nr)'
+		dataType: string
+		lineageTag: c4d1f88b-50b5-4ab7-973c-ab13d8cfc281
+		summarizeBy: none
+		sourceColumn: Polster (Nr)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reparaturkosten '
+		dataType: int64
+		formatString: 0
+		lineageTag: 94e8568c-00ed-4ca6-9b8e-1532b541e419
+		summarizeBy: sum
+		sourceColumn: "Reparaturkosten "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fz-Stellplatz
+		dataType: string
+		lineageTag: 44deb5c4-b8ce-4d21-ba7b-c16c586dc827
+		summarizeBy: none
+		sourceColumn: Fz-Stellplatz
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mietwagen?
+		dataType: string
+		lineageTag: 9e857c78-bbec-4637-93c8-a7f4b9ef2b28
+		summarizeBy: none
+		sourceColumn: Mietwagen?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bestand-Status
+		dataType: string
+		lineageTag: 98756bc3-9f94-4ed3-ac57-b3cd9739a428
+		summarizeBy: none
+		sourceColumn: Bestand-Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Differenzbesteuert
+		dataType: string
+		lineageTag: c5d58bf4-65be-4d7a-9459-8f7370bd7de0
+		summarizeBy: none
+		sourceColumn: Differenzbesteuert
+
+		annotation SummarizationSetBy = Automatic
+
+	column Einkäufer
+		dataType: string
+		lineageTag: 927efacd-10d3-4120-990d-484c3611e9ce
+		summarizeBy: none
+		sourceColumn: Einkäufer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anzahl
+		dataType: int64
+		formatString: 0
+		lineageTag: 0dce3e74-ef61-494c-aaaa-8dd413a6b045
+		summarizeBy: sum
+		sourceColumn: Anzahl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: string
+		lineageTag: d6408b81-7f55-4618-a644-8ad3f969e0d4
+		summarizeBy: none
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filiale
+		dataType: string
+		lineageTag: 8caf51f7-e64e-4e80-bb3f-ad062a66f0f7
+		summarizeBy: none
+		sourceColumn: Filiale
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupp.Gruppe'
+		dataType: string
+		lineageTag: cf33b980-8e89-47eb-9176-944a8bc8b6eb
+		summarizeBy: none
+		sourceColumn: Grupp.Gruppe
+
+		annotation SummarizationSetBy = Automatic
+
+	column 0-30
+		dataType: int64
+		formatString: 0
+		lineageTag: bd0df6f4-31e5-4ea9-ba78-ce96fe19242c
+		summarizeBy: sum
+		sourceColumn: 0-30
+
+		annotation SummarizationSetBy = Automatic
+
+	column 31-60
+		dataType: int64
+		formatString: 0
+		lineageTag: 69e107a3-b9e7-4387-8a4a-9973849ede39
+		summarizeBy: sum
+		sourceColumn: 31-60
+
+		annotation SummarizationSetBy = Automatic
+
+	column 61-90
+		dataType: int64
+		formatString: 0
+		lineageTag: 02d2870a-f3d8-454c-81c5-e31ed8c3cb60
+		summarizeBy: sum
+		sourceColumn: 61-90
+
+		annotation SummarizationSetBy = Automatic
+
+	column 91-180
+		dataType: int64
+		formatString: 0
+		lineageTag: 4151de97-eca8-4fce-b446-aff162237081
+		summarizeBy: sum
+		sourceColumn: 91-180
+
+		annotation SummarizationSetBy = Automatic
+
+	column 181-360
+		dataType: int64
+		formatString: 0
+		lineageTag: c0b30064-4ccb-45d0-9b27-53b2de02c33f
+		summarizeBy: sum
+		sourceColumn: 181-360
+
+		annotation SummarizationSetBy = Automatic
+
+	column >361
+		dataType: int64
+		formatString: 0
+		lineageTag: 319f9e95-ebcc-4ab8-b1ac-284c49da15f0
+		summarizeBy: sum
+		sourceColumn: >361
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bestand neu' = m
+		mode: import
+		source =
+				let
+				    Quelle = Folder.Files("Y:\Power_Bi\Auswertungen\01 täglich\05 Wahl Group\Sales Volumen\Bestand neu"),
+				    #"Gefilterte ausgeblendete Dateien1" = Table.SelectRows(Quelle, each [Attributes]?[Hidden]? <> true),
+				    #"Benutzerdefinierte Funktion aufrufen1" = Table.AddColumn(#"Gefilterte ausgeblendete Dateien1", "Datei transformieren", each #"Datei Bestand transformieren (5)"([Content])),
+				    #"Umbenannte Spalten1" = Table.RenameColumns(#"Benutzerdefinierte Funktion aufrufen1", {"Name", "Source.Name"}),
+				    #"Andere entfernte Spalten1" = Table.SelectColumns(#"Umbenannte Spalten1", {"Source.Name", "Datei transformieren"}),
+				    #"Erweiterte Tabellenspalte1" = Table.ExpandTableColumn(#"Andere entfernte Spalten1", "Datei transformieren", Table.ColumnNames(#"Datei Bestand transformieren (5)"(#"Beispieldatei (5)"))),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Erweiterte Tabellenspalte1",{{"Source.Name", type text}, {"Fz-Status", type text}, {"Bilder?", type text}, {"Fz-Standort", type text}, {"Wagen-Nr", type text}, {"Fahrgestell-Nr (VIN)", type text}, {"Fz-Art", type text}, {"Marke", type text}, {"Modell", type any}, {"Modellversion", type any}, {"Hinweis", type text}, {"Kraftstoffart", type text}, {"Getriebeart", type text}, {"Antriebsart", type any}, {"PS", type number}, {"Hubraum", Int64.Type}, {"Erstzulassung", type date}, {"KM", Int64.Type}, {"Farbe (Text).", type text}, {"Ausstattung", type text}, {"Standtage", Int64.Type}, {"Listenpreis ", Int64.Type}, {"Verkaufspreis ", type number}, {"Sonderpreis ", Int64.Type}, {"Einkaufspreis ", type number}, {"Interne Rechnungen ", type any}, {"Reserviert bis", type date}, {"Name Vorbesitzer", type text}, {"Batterie", type any}, {"Unique Vehicle ID", type any}, {"Datum der letzten Preisanpassung", type date}, {"CO2 Klasse", type text}, {"Extra 12", type any}, {"Extra 13", type any}, {"WLTP gültig", type text}, {"Ort", type any}, {"Verantwortlich/Kostenstelle", type any}, {"Hersteller Kategorie", type any}, {"Neu angelegt?", type text}, {"Dokumente?", type text}, {"Börsen-Status", type text}, {"Verlaufshistorie", type any}, {"Nur ausgewählte Fahrzeuge", type any}, {"Baujahr", type any}, {"KBA", type text}, {"Typ-Nr", type text}, {"Türen", Int64.Type}, {"HU", type date}, {"amtl. Kennzeichen", type any}, {"Bauart", type text}, {"EZ Werk", type any}, {"Farbe (Nr)", type text}, {"Gänge", Int64.Type}, {"Unfall?", type text}, {"Briefnummer", type text}, {"CO2 Wert", Int64.Type}, {"Eingangsdatum", type date}, {"Wiederzulassungs-Kennzeichen", type any}, {"Abgasnorm", type text}, {"Bemerkung", type text}, {"Kategorie", type text}, {"Polster (Nr)", type text}, {"Reparaturkosten ", Int64.Type}, {"Fz-Stellplatz", type text}, {"Mietwagen?", type text}, {"Polster (Text)", type text}, {"Vorbesitzer (Anz.)", Int64.Type}, {"Abmeldedatum", type date}, {"Anlieferdatum", type any}, {"Bestand-Status", type text}, {"Differenzbesteuert", type text}, {"Einkäufer", type text}, {"EZ Werk Erfassung", type any}, {"Fz gültig?", type text}, {"Schlüsseldepot", type text}, {"Wiederzulassung", type any}, {"Fz geprüft?", type text}, {"Herkunft", type any}, {"Werk Bestellnummer", type any}, {"Eigentümer", type text}, {"Datum Renault Stock (AF26)", type any}, {"Erstanlage", type datetime}, {"Anlagevermögen", type text}, {"Farbe (Text)", type any}, {"amtl. Kennzeichen_1", type any}, {"Ausstattung_2", type any}, {"Wagennummer", type any}, {"Letzte Preisänderung", type text}}),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Geänderter Typ", "Source.Name", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Source.Name.1", "Source.Name.2"}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen",{{"Source.Name.1", type text}, {"Source.Name.2", type text}}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Geänderter Typ1",{"Source.Name.1"}),
+				    #"Spalte nach Trennzeichen teilen1" = Table.SplitColumn(#"Entfernte Spalten", "Source.Name.2", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Source.Name.2.1", "Source.Name.2.2"}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen1",{{"Source.Name.2.1", type text}, {"Source.Name.2.2", type text}}),
+				    #"Entfernte Spalten1" = Table.RemoveColumns(#"Geänderter Typ2",{"Source.Name.2.1"}),
+				    #"Spalte nach Position teilen" = Table.SplitColumn(#"Entfernte Spalten1", "Source.Name.2.2", Splitter.SplitTextByPositions({0, 10}, false), {"Source.Name.2.2.1", "Source.Name.2.2.2"}),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Spalte nach Position teilen",{{"Source.Name.2.2.1", type date}, {"Source.Name.2.2.2", type text}}),
+				    #"Entfernte Spalten2" = Table.RemoveColumns(#"Geänderter Typ3",{"Source.Name.2.2.2"}),
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"Entfernte Spalten2",{{"Source.Name.2.2.1", "Stand"}}),
+				    #"Hinzugefügter Index" = Table.AddIndexColumn(#"Umbenannte Spalten", "Index", 1, 0, Int64.Type),
+				    #"Umbenannte Spalten2" = Table.RenameColumns(#"Hinzugefügter Index",{{"Index", "Anzahl"}}),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Umbenannte Spalten2",{"Stand", "Fz-Status", "Bilder?", "Fz-Standort", "Fahrgestell-Nr (VIN)", "Fz-Art", "Marke", "Modell", "Modellversion", "Hinweis", "Erstzulassung", "KM", "Farbe (Text).", "Ausstattung", "Standtage", "Listenpreis ", "Verkaufspreis ", "Sonderpreis ", "Einkaufspreis ", "Interne Rechnungen ",  "Reserviert bis", "Name Vorbesitzer", "Unique Vehicle ID",  "Datum der letzten Preisanpassung", "WLTP gültig", "Neu angelegt?", "Dokumente?", "Börsen-Status", "Türen", "HU", "Bauart", "EZ Werk", "Unfall?", "Eingangsdatum", "Wiederzulassungs-Kennzeichen", "Bemerkung", "Kategorie", "Polster (Nr)", "Reparaturkosten ", "Fz-Stellplatz", "Mietwagen?", "Bestand-Status", "Differenzbesteuert", "Einkäufer", "Anzahl"}),
+				    #"Spalte nach Trennzeichen teilen2" = Table.SplitColumn(#"Andere entfernte Spalten", "Fz-Standort", Splitter.SplitTextByEachDelimiter({"("}, QuoteStyle.Csv, true), {"Fz-Standort.1", "Fz-Standort.2"}),
+				    #"Geänderter Typ4" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen2",{{"Fz-Standort.1", type text}, {"Fz-Standort.2", type text}}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Geänderter Typ4",")","",Replacer.ReplaceText,{"Fz-Standort.2"}),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Ersetzter Wert", each true),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(#"Gefilterte Zeilen","GmbH & Co. KG","",Replacer.ReplaceText,{"Fz-Standort.1"}),
+				    #"Duplizierte Spalte" = Table.DuplicateColumn(#"Ersetzter Wert1", "Fz-Standort.1", "Fz-Standort.1 - Kopie"),
+				    #"Spalte nach Trennzeichen teilen3" = Table.SplitColumn(#"Duplizierte Spalte", "Fz-Standort.1 - Kopie", Splitter.SplitTextByEachDelimiter({"-"}, QuoteStyle.Csv, true), {"Fz-Standort.1 - Kopie.1", "Fz-Standort.1 - Kopie.2"}),
+				    #"Geänderter Typ5" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen3",{{"Fz-Standort.1 - Kopie.1", type text}, {"Fz-Standort.1 - Kopie.2", type text}}),
+				    #"Ersetzter Wert2" = Table.ReplaceValue(#"Geänderter Typ5","Z2","R2",Replacer.ReplaceText,{"Fz-Standort.1 - Kopie.1"}),
+				    #"Gefilterte Zeilen1" = Table.SelectRows(#"Ersetzter Wert2", each true),
+				    #"Umbenannte Spalten3" = Table.RenameColumns(#"Gefilterte Zeilen1",{{"Fz-Standort.1 - Kopie.1", "Firma"}}),
+				    #"Hinzugefügte bedingte Spalte" = Table.AddColumn(#"Umbenannte Spalten3", "Filiale", each if [#"Fz-Standort.1 - Kopie.2"] = null then [#"Fz-Standort.2"] else [#"Fz-Standort.1 - Kopie.2"]),
+				    #"Entfernte Spalten3" = Table.RemoveColumns(#"Hinzugefügte bedingte Spalte",{"Fz-Standort.1 - Kopie.2"}),
+				    #"Zusammengeführte Abfragen" = Table.NestedJoin(#"Entfernte Spalten3", {"Standtage"}, Grupp, {"Standtage"}, "Grupp", JoinKind.LeftOuter),
+				    #"Erweiterte Grupp" = Table.ExpandTableColumn(#"Zusammengeführte Abfragen", "Grupp", {"Gruppe"}, {"Grupp.Gruppe"}),
+				    #"Hinzugefügte bedingte Spalte1" = Table.AddColumn(#"Erweiterte Grupp", "0-30", each if [Grupp.Gruppe] = "0-30" then 1 else 0),
+				    #"Hinzugefügte bedingte Spalte2" = Table.AddColumn(#"Hinzugefügte bedingte Spalte1", "31-60", each if [Grupp.Gruppe] = "31-60" then 1 else 0),
+				    #"Hinzugefügte bedingte Spalte3" = Table.AddColumn(#"Hinzugefügte bedingte Spalte2", "61-90", each if [Grupp.Gruppe] = "61-90" then 1 else 0),
+				    #"Hinzugefügte bedingte Spalte4" = Table.AddColumn(#"Hinzugefügte bedingte Spalte3", "91-180", each if [Grupp.Gruppe] = "91-180" then 1 else 0),
+				    #"Hinzugefügte bedingte Spalte5" = Table.AddColumn(#"Hinzugefügte bedingte Spalte4", "181-360", each if [Grupp.Gruppe] = "181-360" then 1 else 0),
+				    #"Hinzugefügte bedingte Spalte6" = Table.AddColumn(#"Hinzugefügte bedingte Spalte5", ">361", each if [Grupp.Gruppe] = ">360" then 1 else 0),
+				    #"Geänderter Typ6" = Table.TransformColumnTypes(#"Hinzugefügte bedingte Spalte6",{{"0-30", Int64.Type}, {"31-60", Int64.Type}, {"61-90", Int64.Type}, {"91-180", Int64.Type}, {"181-360", Int64.Type}, {">361", Int64.Type}}),
+				    #"Ersetzter Wert3" = Table.ReplaceValue(#"Geänderter Typ6","VOLKSWAGEN-VW","VW",Replacer.ReplaceText,{"Marke"}),
+				    #"Ersetzter Wert4" = Table.ReplaceValue(#"Ersetzter Wert3","xpeng","XPENG",Replacer.ReplaceText,{"Marke"}),
+				    #"Ersetzter Wert5" = Table.ReplaceValue(#"Ersetzter Wert4","Xpeng","XPENG",Replacer.ReplaceText,{"Marke"}),
+				    #"Ersetzter Wert6" = Table.ReplaceValue(#"Ersetzter Wert5","FORD/D","Ford",Replacer.ReplaceText,{"Marke"}),
+				    #"Ersetzter Wert7" = Table.ReplaceValue(#"Ersetzter Wert6"," ","",Replacer.ReplaceText,{"Marke"}),
+				    #"Ersetzter Wert8" = Table.ReplaceValue(#"Ersetzter Wert7","MN","Mini",Replacer.ReplaceText,{"Marke"}),
+				    #"Gefilterte Zeilen2" = Table.SelectRows(#"Ersetzter Wert8", each true),
+				    #"Ersetzter Wert9" = Table.ReplaceValue(#"Gefilterte Zeilen2","-Benz","",Replacer.ReplaceText,{"Marke"}),
+				    #"Gefilterte Zeilen3" = Table.SelectRows(#"Ersetzter Wert9", each ([Firma] <> "R2 "))
+				in
+				    #"Gefilterte Zeilen3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

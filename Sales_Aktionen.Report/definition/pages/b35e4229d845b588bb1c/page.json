@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
+  "name": "b35e4229d845b588bb1c",
+  "displayName": "Neuwagen Bestand",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "48ec975ad0ff5408fdca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PowerBI CarLinerSFTPData"
+              }
+            },
+            "Property": "Aktionen"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "3aad8bb7a54aa3b5c707",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Bestand neu"
+              }
+            },
+            "Property": "Fz-Art"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "Bestand neu",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "Fz-Art"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'NW'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": -0.1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "d71f8565bd479269c1d9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "a6391a29a6729416b68a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "bb58b6b9d13c58d4e89a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "59f84a410bed582202bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "74aef3ba708e808ecd4d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "c8924380b47698e0c93a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "86cc4173a51e494beadb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e56d9a734e19d9e6d4b2",
+      "target": "196100c53d14bde284c4",
+      "type": "NoFilter"
+    }
+  ]
+}

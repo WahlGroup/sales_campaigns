@@ -1,0 +1,175 @@
+table Berechnungen
+	lineageTag: 459bbbaf-30a4-4eab-8258-06e1892ebd9c
+
+	measure 'AE YTD' =
+			
+			IF(
+				ISFILTERED('PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]),
+				ERROR("Quickmeasures mit Zeitintelligenz können nur über die von Power BI bereitgestellte Datumshierarchie oder die primäre Datumsspalte gruppiert oder gefiltert werden."),
+				TOTALYTD(
+					SUM('PowerBI CarLinerSFTPData'[Anzahl AE]),
+					'PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]
+				)
+			)
+		formatString: 0
+		lineageTag: 2af87e8b-b03b-441f-b160-a99f1aca5d55
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearToDate"
+				}
+
+		changedProperty = FormatString
+
+	measure 'AE MTD' =
+			
+			IF(
+				ISFILTERED('PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]),
+				ERROR("Quickmeasures mit Zeitintelligenz können nur über die von Power BI bereitgestellte Datumshierarchie oder die primäre Datumsspalte gruppiert oder gefiltert werden."),
+				TOTALMTD(
+					SUM('PowerBI CarLinerSFTPData'[Anzahl AE]),
+					'PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]
+				)
+			)
+		formatString: 0
+		lineageTag: 1d6d0e9a-d151-432e-9f2a-73c5185414c9
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MonthToDate"
+				}
+
+		changedProperty = FormatString
+
+	measure 'AE QTD' =
+			
+			IF(
+				ISFILTERED('PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]),
+				ERROR("Quickmeasures mit Zeitintelligenz können nur über die von Power BI bereitgestellte Datumshierarchie oder die primäre Datumsspalte gruppiert oder gefiltert werden."),
+				TOTALQTD(
+					SUM('PowerBI CarLinerSFTPData'[Anzahl AE]),
+					'PowerBI CarLinerSFTPData'[Auftragsdatum - Kopie].[Date]
+				)
+			)
+		formatString: 0
+		lineageTag: 78f3a0bb-9fa1-4b9c-bc87-13e38dc00ebe
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "QuarterToDate"
+				}
+
+		changedProperty = FormatString
+
+	measure 'ges. Fahrzeugziel/Tag MTD' =
+			
+			IF(
+				ISFILTERED('Ziele für Volumen'[Datum - Kopie]),
+				ERROR("Quickmeasures mit Zeitintelligenz können nur über die von Power BI bereitgestellte Datumshierarchie oder die primäre Datumsspalte gruppiert oder gefiltert werden."),
+				TOTALMTD(
+					SUM('Ziele für Volumen'[ges. Fahrzeugziel/Tag]),
+					'Ziele für Volumen'[Datum - Kopie].[Date]
+				)
+			)
+		lineageTag: a1dae442-6d18-47f5-99e0-b2957a8bdba4
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MonthToDate"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ziel per' =
+			
+			IF(
+				ISFILTERED('Mastertabelle Datum'[Datum]),
+				ERROR("Quickmeasures mit Zeitintelligenz können nur über die von Power BI bereitgestellte Datumshierarchie oder die primäre Datumsspalte gruppiert oder gefiltert werden."),
+				TOTALMTD(
+					SUM('Ziele für Volumen'[ges. Fahrzeugziel/Tag]),
+					'Mastertabelle Datum'[Datum].[Date]
+				)
+			)
+		lineageTag: e74b1c34-13bb-41b9-b7fb-07616329ab1f
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MonthToDate"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ZEG ges.' =
+			
+			DIVIDE(
+				SUM('PowerBI CarLinerSFTPData'[Anzahl AE]),
+				SUM('Ziele für Volumen'[ges. Fahrzeugziel/Tag])
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 9c24bda4-21bc-4a92-b7e4-185d8ecdac96
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'ZEG NW' =
+			
+			DIVIDE(
+				SUM('PowerBI CarLinerSFTPData'[AE NW ges.]),
+				SUM('Ziele für Volumen'[AE Ziel ges.])
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: dbc96576-52da-4029-ac32-959bd0ff715a
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	measure 'ZEG GW' =
+			
+			DIVIDE(
+				SUM('PowerBI CarLinerSFTPData'[Anzahl GW]),
+				SUM('Ziele für Volumen'[Ziel GW/Tag])
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 7993f802-a3b0-441c-b466-87a0bc34b722
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "MathematicalDivision"
+				}
+
+		changedProperty = FormatString
+
+	partition Berechnungen = m
+		mode: import
+		source =
+				let
+				    Quelle = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Spalte ""1""" = _t]),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(Quelle,{{"Spalte ""1""", type text}}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Geänderter Typ",{"Spalte ""1"""})
+				in
+				    #"Entfernte Spalten"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

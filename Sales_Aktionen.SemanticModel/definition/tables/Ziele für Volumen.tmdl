@@ -1,0 +1,398 @@
+table 'Ziele für Volumen'
+	lineageTag: 429a7bfd-2114-450c-9a80-c71dde37c049
+
+	column Standort
+		dataType: string
+		lineageTag: f8fd6a37-277f-4102-aa6d-f36769d8309a
+		summarizeBy: none
+		sourceColumn: Standort
+
+		annotation SummarizationSetBy = Automatic
+
+	column FürdasJahr
+		dataType: string
+		lineageTag: c036272f-4728-46f9-95b4-7bd7a3844739
+		summarizeBy: none
+		sourceColumn: FürdasJahr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name VK'
+		dataType: string
+		lineageTag: a4bfa9f0-c00a-4208-8629-e9e3d0f3dd0d
+		summarizeBy: none
+		sourceColumn: Name VK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ges. Fahrzeugziel/Tag'
+		dataType: double
+		lineageTag: aac5bbd7-6b0e-4929-b30d-dd3ca870ad3f
+		summarizeBy: sum
+		sourceColumn: ges. Fahrzeugziel/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Renault/Tag'
+		dataType: double
+		lineageTag: bfe5ac1f-3685-4b5a-92ad-8dabab332d1f
+		summarizeBy: sum
+		sourceColumn: Ziel Renault/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Renault LKW/Tag'
+		dataType: double
+		lineageTag: 6bf3aad9-148f-4cab-93aa-c7a3e3ac2faa
+		summarizeBy: sum
+		sourceColumn: Ziel Renault LKW/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Dacia/Tag'
+		dataType: double
+		lineageTag: 6ae21e9e-7ceb-4434-8ac6-93509d854128
+		summarizeBy: sum
+		sourceColumn: Ziel Dacia/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Ford/Tag'
+		dataType: double
+		lineageTag: 6b117405-869c-4115-a27d-5f3f7d10240c
+		summarizeBy: sum
+		sourceColumn: Ziel Ford/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Ford LKW/Tag'
+		dataType: double
+		lineageTag: 6c24b4e6-02b6-46fe-ad75-7c91f379fc97
+		summarizeBy: sum
+		sourceColumn: Ziel Ford LKW/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Maxus/Tag'
+		dataType: double
+		lineageTag: a5b7c855-2a21-42b0-a539-2e8899addfb8
+		summarizeBy: sum
+		sourceColumn: Ziel Maxus/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Mazda/Tag'
+		dataType: double
+		lineageTag: c9fded29-46cc-4ff4-b2b6-f30f9739f6ca
+		summarizeBy: sum
+		sourceColumn: Ziel Mazda/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel X-Peng/Tag'
+		dataType: double
+		lineageTag: a3dd9f26-76f9-4908-ab4e-6d1c1776be0b
+		summarizeBy: sum
+		sourceColumn: Ziel X-Peng/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel MG/Tag'
+		dataType: double
+		lineageTag: 896a681c-b575-4bd6-938e-97347e688113
+		summarizeBy: sum
+		sourceColumn: Ziel MG/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Peugeot/Tag'
+		dataType: double
+		lineageTag: f5d0e569-106f-4519-ad10-0bde19409b12
+		summarizeBy: sum
+		sourceColumn: Ziel Peugeot/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Citroen/Tag'
+		dataType: double
+		lineageTag: c103f756-5e28-40ba-aa76-0051decd8f1b
+		summarizeBy: sum
+		sourceColumn: Ziel Citroen/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Skoda/Tag'
+		dataType: double
+		lineageTag: 60fda030-c150-4e84-a8a7-6543eef91185
+		summarizeBy: sum
+		sourceColumn: Ziel Skoda/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Peugeot LKW/Tag'
+		dataType: double
+		lineageTag: cf7d9c8c-92a2-4aaf-bf41-021d83860927
+		summarizeBy: sum
+		sourceColumn: Ziel Peugeot LKW/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Citroen LKW/Tag'
+		dataType: double
+		lineageTag: dba55f91-4718-458d-bcec-9b836ac7a683
+		summarizeBy: sum
+		sourceColumn: Ziel Citroen LKW/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel KIA/Tag'
+		dataType: double
+		lineageTag: 379a3810-06b3-4acb-9df0-c2c0670e9ae5
+		summarizeBy: sum
+		sourceColumn: Ziel KIA/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel GW/Tag'
+		dataType: double
+		lineageTag: f74fc09b-bd4f-4180-8702-66498646cce2
+		summarizeBy: sum
+		sourceColumn: Ziel GW/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Lead/Tag'
+		dataType: double
+		lineageTag: b906f3df-2f81-4749-b3dc-0954241553e5
+		summarizeBy: sum
+		sourceColumn: Ziel Lead/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Datum
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 61eab881-c8c6-4c14-84c8-770b83044bd7
+		summarizeBy: none
+		sourceColumn: Datum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Grund.1'
+		dataType: string
+		lineageTag: e0faa102-90e1-43cf-bdc2-e7742c729f43
+		summarizeBy: none
+		sourceColumn: Grund.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Soll Anwesenheit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f791970-7013-4c2c-9677-44aeb36373fe
+		summarizeBy: sum
+		sourceColumn: Soll Anwesenheit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abwesenheit
+		dataType: double
+		lineageTag: 54c744f5-f3c1-441a-95b2-75cd75ab2a6c
+		summarizeBy: sum
+		sourceColumn: Abwesenheit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ist Anwesenheit'
+		dataType: double
+		lineageTag: 985a3e74-9964-46ea-ba76-75088164753e
+		summarizeBy: sum
+		sourceColumn: Ist Anwesenheit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ziel Sonstige/Tag'
+		dataType: double
+		lineageTag: c94107e9-f83e-409f-8585-99898211ec39
+		summarizeBy: sum
+		sourceColumn: Ziel Sonstige/Tag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Datum - Kopie'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1cdfb62a-ffb0-4a18-b694-29e9abadcc78
+		summarizeBy: none
+		sourceColumn: Datum - Kopie
+
+		variation Variation
+			isDefault
+			relationship: 44ba22b0-dc02-4164-89d2-571686dbc951
+			defaultHierarchy: LocalDateTable_b8d15389-e4d0-4837-b824-6cea3a4cce9e.Datumshierarchie
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'AE Ziel ges.'
+		dataType: double
+		lineageTag: 4bc20941-dd8f-4dde-a6b9-2f6178c6d8c1
+		summarizeBy: sum
+		sourceColumn: AE Ziel ges.
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Ziele für Volumen' = m
+		mode: import
+		source =
+				let
+				    Quelle = SharePoint.Tables("https://wahlgroupde.sharepoint.com/sites/HorstWahlSales-Zielvereinbarungen", [Implementation=null, ApiVersion=15]),
+				    #"a873ba5e-6c9e-47c5-b5ca-1b078f6629e9" = Quelle{[Id="a873ba5e-6c9e-47c5-b5ca-1b078f6629e9"]}[Items],
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"a873ba5e-6c9e-47c5-b5ca-1b078f6629e9",{{"ID", "ID.1"}}),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Umbenannte Spalten",{"Title", "Standort", "VerkäuferId", "VerkäuferStringId", "Gesamt Fahrzeugziel", "FürdasJahr", "Renault", "RenaultLKW", "Dacia", "Ford", "FordLKW", "Maxus", "Mazda", "X-Peng", "MG", "Peugeot", "Citroen", "OData_Škoda", "Notizen", "Name_VK", "Gebrauchtwagen", "PeugeotLKW", "CitroenLKW", "KIA", "LeadZiel/Tag", "von", "bis", "F1.Nummer", "Verkäufer"}),
+				    #"Erweiterte Verkäufer" = Table.ExpandRecordColumn(#"Andere entfernte Spalten", "Verkäufer", {"EMail"}, {"Verkäufer.EMail"}),
+				    #"Ersetzter Wert" = Table.ReplaceValue(#"Erweiterte Verkäufer",".",",",Replacer.ReplaceText,{"Gesamt Fahrzeugziel"}),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Ersetzter Wert",{{"VerkäuferId", type text}, {"VerkäuferStringId", type text}, {"Gesamt Fahrzeugziel", type number}, {"FürdasJahr", type text}, {"Renault", type number}, {"RenaultLKW", type number}, {"Dacia", type number}, {"Ford", type number}, {"FordLKW", type number}, {"Maxus", type number}, {"Mazda", type number}, {"X-Peng", type number}, {"MG", type number}, {"Peugeot", type number}, {"Citroen", type number}, {"OData_Škoda", type number}}),
+				    #"Umbenannte Spalten1" = Table.RenameColumns(#"Geänderter Typ",{{"OData_Škoda", "Škoda"}}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Umbenannte Spalten1",{{"Notizen", type text}, {"Name_VK", type text}, {"Gebrauchtwagen", type number}, {"PeugeotLKW", type number}, {"CitroenLKW", type number}, {"KIA", type number}, {"LeadZiel/Tag", type number}, {"von", type date}, {"bis", type date}, {"Verkäufer.EMail", type text}}),
+				    #"Andere entfernte Spalten1" = Table.SelectColumns(#"Geänderter Typ1",{"Title", "Standort", "Gesamt Fahrzeugziel", "FürdasJahr", "Renault", "RenaultLKW", "Dacia", "Ford", "FordLKW", "Maxus", "Mazda", "X-Peng", "MG", "Peugeot", "Citroen", "Škoda", "Notizen", "Name_VK", "Gebrauchtwagen", "PeugeotLKW", "CitroenLKW", "KIA", "LeadZiel/Tag", "von", "bis", "F1.Nummer", "Verkäufer.EMail"}),
+				    #"Ersetzter Wert1" = Table.ReplaceValue(#"Andere entfernte Spalten1",null,0,Replacer.ReplaceValue,{"LeadZiel/Tag", "Gesamt Fahrzeugziel", "Renault", "RenaultLKW", "Dacia", "Ford", "FordLKW", "Maxus", "Mazda", "X-Peng", "MG", "Peugeot", "Citroen", "Škoda", "PeugeotLKW", "CitroenLKW", "KIA", "Gebrauchtwagen"}),
+				    #"Spalte nach Trennzeichen teilen" = Table.SplitColumn(#"Ersetzter Wert1", "Name_VK", Splitter.SplitTextByEachDelimiter({","}, QuoteStyle.Csv, false), {"Name_VK.1", "Name_VK.2"}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen",{{"Name_VK.1", type text}, {"Name_VK.2", type text}}),
+				    #"Spalte nach Trennzeichen teilen1" = Table.SplitColumn(#"Geänderter Typ2", "Name_VK.1", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Name_VK.1.1", "Name_VK.1.2"}),
+				    #"Geänderter Typ3" = Table.TransformColumnTypes(#"Spalte nach Trennzeichen teilen1",{{"Name_VK.1.1", type text}, {"Name_VK.1.2", type text}}),
+				    #"Zusammengeführte Spalten" = Table.CombineColumns(#"Geänderter Typ3",{"Name_VK.1.2", "Name_VK.2"},Combiner.CombineTextByDelimiter("", QuoteStyle.None),"Vorname"),
+				    #"Umbenannte Spalten2" = Table.RenameColumns(#"Zusammengeführte Spalten",{{"Name_VK.1.1", "Name"}}),
+				    #"Zusammengeführte Abfragen" = Table.NestedJoin(#"Umbenannte Spalten2", {"FürdasJahr"}, #"Mastertabelle Datum", {"Jahr #"}, "Mastertabelle Datum", JoinKind.LeftOuter),
+				    #"Erweiterte Mastertabelle Datum" = Table.ExpandTableColumn(#"Zusammengeführte Abfragen", "Mastertabelle Datum", {"Arbeitstage im Jahr"}, {"Arbeitstage im Jahr"}),
+				    #"Geänderter Typ4" = Table.TransformColumnTypes(#"Erweiterte Mastertabelle Datum",{{"Arbeitstage im Jahr", type number}}),
+				    #"Neu angeordnete Spalten" = Table.ReorderColumns(#"Geänderter Typ4",{"Title", "Standort", "FürdasJahr", "Name", "Vorname", "Verkäufer.EMail", "von", "bis", "Arbeitstage im Jahr", "LeadZiel/Tag", "Gesamt Fahrzeugziel", "Renault", "RenaultLKW", "Dacia", "Ford", "FordLKW", "Maxus", "Mazda", "X-Peng", "MG", "Peugeot", "Citroen", "Škoda", "PeugeotLKW", "CitroenLKW", "KIA", "Gebrauchtwagen", "Notizen"}),
+				    #"ges. Fzg.-Ziel/Tag" = Table.AddColumn(#"Neu angeordnete Spalten", "ges. Fahrzeugziel/Tag", each [Gesamt Fahrzeugziel]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ5" = Table.TransformColumnTypes(#"ges. Fzg.-Ziel/Tag",{{"ges. Fahrzeugziel/Tag", type number}}),
+				    #"Ziel Renault/Tag" = Table.AddColumn(#"Geänderter Typ5", "Ziel Renault/Tag", each [Renault]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ6" = Table.TransformColumnTypes(#"Ziel Renault/Tag",{{"Ziel Renault/Tag", type number}}),
+				    #"Ziel Renault LKW/Tag" = Table.AddColumn(#"Geänderter Typ6", "Ziel Renault LKW/Tag", each [RenaultLKW]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ7" = Table.TransformColumnTypes(#"Ziel Renault LKW/Tag",{{"Ziel Renault LKW/Tag", type number}}),
+				    #"Ziel Dacia/Tag" = Table.AddColumn(#"Geänderter Typ7", "Ziel Dacia/Tag", each [Dacia]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ8" = Table.TransformColumnTypes(#"Ziel Dacia/Tag",{{"Ziel Dacia/Tag", type number}}),
+				    #"Ziel Ford/Tag" = Table.AddColumn(#"Geänderter Typ8", "Ziel Ford/Tag", each [Ford]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ9" = Table.TransformColumnTypes(#"Ziel Ford/Tag",{{"Ziel Ford/Tag", type number}}),
+				    #"Ziel Ford LKW/Tag" = Table.AddColumn(#"Geänderter Typ9", "Ziel Ford LKW/Tag", each [FordLKW]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ10" = Table.TransformColumnTypes(#"Ziel Ford LKW/Tag",{{"Ziel Ford LKW/Tag", type number}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte" = Table.AddColumn(#"Geänderter Typ10", "Ziel Maxus/Tag", each [Maxus]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ11" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte",{{"Ziel Maxus/Tag", type number}}),
+				    #"Ziel Mazda/Tag" = Table.AddColumn(#"Geänderter Typ11", "Ziel Mazda/Tag", each [Mazda]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ12" = Table.TransformColumnTypes(#"Ziel Mazda/Tag",{{"Ziel Mazda/Tag", type number}}),
+				    #"Ziel X-Peng/Tag" = Table.AddColumn(#"Geänderter Typ12", "Ziel X-Peng/Tag", each [#"X-Peng"]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ13" = Table.TransformColumnTypes(#"Ziel X-Peng/Tag",{{"Ziel X-Peng/Tag", type number}}),
+				    #"Ziel MG/Tag" = Table.AddColumn(#"Geänderter Typ13", "Ziel MG/Tag", each [MG]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ14" = Table.TransformColumnTypes(#"Ziel MG/Tag",{{"Ziel MG/Tag", type number}}),
+				    #"Ziel Peugeot/Tag" = Table.AddColumn(#"Geänderter Typ14", "Ziel Peugeot/Tag", each [Peugeot]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ15" = Table.TransformColumnTypes(#"Ziel Peugeot/Tag",{{"Ziel Peugeot/Tag", type number}}),
+				    #"Ziel Citroen/Tag" = Table.AddColumn(#"Geänderter Typ15", "Ziel Citroen/Tag", each [Citroen]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ16" = Table.TransformColumnTypes(#"Ziel Citroen/Tag",{{"Ziel Citroen/Tag", type number}}),
+				    #"Ziel Škoda/Tag" = Table.AddColumn(#"Geänderter Typ16", "Ziel Škoda/Tag", each [Škoda]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ17" = Table.TransformColumnTypes(#"Ziel Škoda/Tag",{{"Ziel Škoda/Tag", type number}}),
+				    #"Ziel Peugeot LKW/Tag" = Table.AddColumn(#"Geänderter Typ17", "Ziel Peugeot LKW/Tag", each [PeugeotLKW]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ19" = Table.TransformColumnTypes(#"Ziel Peugeot LKW/Tag",{{"Ziel Peugeot LKW/Tag", type number}}),
+				    #"Ziel Citroen LKW/Tag" = Table.AddColumn(#"Geänderter Typ19", "Ziel Citroen LKW/Tag", each [CitroenLKW]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ20" = Table.TransformColumnTypes(#"Ziel Citroen LKW/Tag",{{"Ziel Citroen LKW/Tag", type number}}),
+				    #"Ziel KIA/Tag" = Table.AddColumn(#"Geänderter Typ20", "Ziel KIA/Tag", each [KIA]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ18" = Table.TransformColumnTypes(#"Ziel KIA/Tag",{{"Ziel KIA/Tag", type number}, {"Standort", type text}}),
+				    #"Ziel GW/Tag" = Table.AddColumn(#"Geänderter Typ18", "Ziel GW/Tag", each [Gebrauchtwagen]/[Arbeitstage im Jahr]),
+				    #"Geänderter Typ21" = Table.TransformColumnTypes(#"Ziel GW/Tag",{{"Ziel GW/Tag", type number}}),
+				    #"Andere entfernte Spalten2" = Table.SelectColumns(#"Geänderter Typ21",{"Standort", "FürdasJahr", "Name", "Vorname", "von", "bis", "LeadZiel/Tag", "F1.Nummer", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag"}),
+				    #"Geänderter Typ24" = Table.TransformColumnTypes(#"Andere entfernte Spalten2",{{"F1.Nummer", type text}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte1" = Table.AddColumn(#"Geänderter Typ24", "locDate", each {Number.From([von])..Number.From([bis])}),
+				    #"Erweiterte locDate" = Table.ExpandListColumn(#"Hinzugefügte benutzerdefinierte Spalte1", "locDate"),
+				    #"Geänderter Typ22" = Table.TransformColumnTypes(#"Erweiterte locDate",{{"locDate", type date}}),
+				    #"Zusammengeführte Abfragen1" = Table.NestedJoin(#"Geänderter Typ22", {"locDate"}, #"Mastertabelle Datum", {"Datum"}, "Mastertabelle Datum", JoinKind.LeftOuter),
+				    #"Erweiterte Mastertabelle Datum1" = Table.ExpandTableColumn(#"Zusammengeführte Abfragen1", "Mastertabelle Datum", {"Arbeitstage"}, {"Mastertabelle Datum.Arbeitstage"}),
+				    #"Gefilterte Zeilen" = Table.SelectRows(#"Erweiterte Mastertabelle Datum1", each ([Mastertabelle Datum.Arbeitstage] <> null)),
+				    #"Geänderter Typ23" = Table.TransformColumnTypes(#"Gefilterte Zeilen",{{"Mastertabelle Datum.Arbeitstage", type date}}),
+				    #"Andere entfernte Spalten3" = Table.SelectColumns(#"Geänderter Typ23",{"Standort", "FürdasJahr", "Name", "Vorname", "LeadZiel/Tag", "F1.Nummer", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Mastertabelle Datum.Arbeitstage"}),
+				    #"Umbenannte Spalten3" = Table.RenameColumns(#"Andere entfernte Spalten3",{{"Mastertabelle Datum.Arbeitstage", "Datum"}}),
+				    #"Hinzugefügter Index" = Table.AddIndexColumn(#"Umbenannte Spalten3", "Index", 1, 0, Int64.Type),
+				    #"Umbenannte Spalten4" = Table.RenameColumns(#"Hinzugefügter Index",{{"Index", "Soll Anwesenheit"}}),
+				    #"Zusammengeführte Spalte eingefügt" = Table.AddColumn(#"Umbenannte Spalten4", "Mitarbeiter", each Text.Combine({[Name], [Vorname]}, " "), type text),
+				    #"Neu angeordnete Spalten1" = Table.ReorderColumns(#"Zusammengeführte Spalte eingefügt",{"Standort", "FürdasJahr", "Name", "Vorname", "Mitarbeiter", "LeadZiel/Tag", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Datum", "Soll Anwesenheit"}),
+				    #"Geänderter Typ25" = Table.TransformColumnTypes(#"Neu angeordnete Spalten1",{{"F1.Nummer", Int64.Type}}),
+				    #"Zusammengeführte Abfragen2" = Table.NestedJoin(#"Geänderter Typ25", {"F1.Nummer", "Datum"}, #"Data Fehlzeiten", {"Mitarbeiter Nr.", "Datum"}, "Data Fehlzeiten", JoinKind.LeftOuter),
+				    #"Erweiterte Data Fehlzeiten" = Table.ExpandTableColumn(#"Zusammengeführte Abfragen2", "Data Fehlzeiten", {"Grund.1", "Abwesenheit"}, {"Grund.1", "Abwesenheit"}),
+				    #"Ersetzter Wert2" = Table.ReplaceValue(#"Erweiterte Data Fehlzeiten",null,"Anwesend",Replacer.ReplaceValue,{"Grund.1"}),
+				    #"Ersetzter Wert3" = Table.ReplaceValue(#"Ersetzter Wert2",null,0,Replacer.ReplaceValue,{"Abwesenheit"}),
+				    #"Neu angeordnete Spalten2" = Table.ReorderColumns(#"Ersetzter Wert3",{"Standort", "FürdasJahr", "Name", "Vorname", "Mitarbeiter", "F1.Nummer", "LeadZiel/Tag", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Datum", "Grund.1", "Soll Anwesenheit", "Abwesenheit"}),
+				    #"Ist Anwesenheit" = Table.AddColumn(#"Neu angeordnete Spalten2", "Ist Anwesenheit", each [Soll Anwesenheit]-[Abwesenheit]),
+				    #"Geänderter Typ26" = Table.TransformColumnTypes(#"Ist Anwesenheit",{{"Ist Anwesenheit", type number}}),
+				    #"Ziel Lead/Tag" = Table.AddColumn(#"Geänderter Typ26", "Ziel Lead/Tag", each [#"LeadZiel/Tag"]*[Ist Anwesenheit]),
+				    #"Geänderter Typ27" = Table.TransformColumnTypes(#"Ziel Lead/Tag",{{"Ziel Lead/Tag", type number}}),
+				    #"Zusammengeführte Spalte eingefügt1" = Table.AddColumn(#"Geänderter Typ27", "Name VK", each Text.Combine({[Vorname], [Name]}, " "), type text),
+				    #"Andere entfernte Spalten4" = Table.SelectColumns(#"Zusammengeführte Spalte eingefügt1",{"Name VK", "Standort", "FürdasJahr", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Datum", "Grund.1", "Soll Anwesenheit", "Abwesenheit", "Ist Anwesenheit", "Ziel Lead/Tag"}),
+				    #"Neu angeordnete Spalten3" = Table.ReorderColumns(#"Andere entfernte Spalten4",{"Name VK", "Standort", "FürdasJahr", "Datum", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Škoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Ziel Lead/Tag", "Grund.1", "Soll Anwesenheit", "Abwesenheit", "Ist Anwesenheit"}),
+				    #"Gefilterte Zeilen1" = Table.SelectRows(#"Neu angeordnete Spalten3", each true),
+				    #"Zusammengeführte Spalte eingefügt2" = Table.AddColumn(#"Gefilterte Zeilen1", "Zusammengeführt", each Text.Combine({[Name VK], Text.From([Datum], "de-DE")}, ""), type text),
+				    #"Entfernte Duplikate" = Table.Distinct(#"Zusammengeführte Spalte eingefügt2", {"Zusammengeführt"}),
+				    #"Entfernte Spalten" = Table.RemoveColumns(#"Entfernte Duplikate",{"Zusammengeführt"}),
+				    #"Umbenannte Spalten5" = Table.RenameColumns(#"Entfernte Spalten",{{"Ziel Škoda/Tag", "Ziel Skoda/Tag"}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte2" = Table.AddColumn(#"Umbenannte Spalten5", "Ziel Sonstige/Tag", each [#"Ziel Renault/Tag"]+[#"Ziel Renault LKW/Tag"]+[#"Ziel Dacia/Tag"]),
+				    #"Geänderter Typ28" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte2",{{"Ziel Sonstige/Tag", type number}}),
+				    #"Neu angeordnete Spalten4" = Table.ReorderColumns(#"Geänderter Typ28",{"Name VK", "Standort", "FürdasJahr", "Datum", "ges. Fahrzeugziel/Tag", "Ziel Renault/Tag", "Ziel Renault LKW/Tag", "Ziel Dacia/Tag", "Ziel Ford/Tag", "Ziel Ford LKW/Tag", "Ziel Maxus/Tag", "Ziel Mazda/Tag", "Ziel X-Peng/Tag", "Ziel MG/Tag", "Ziel Peugeot/Tag", "Ziel Citroen/Tag", "Ziel Skoda/Tag", "Ziel Peugeot LKW/Tag", "Ziel Citroen LKW/Tag", "Ziel KIA/Tag", "Ziel GW/Tag", "Ziel Sonstige/Tag", "Ziel Lead/Tag", "Grund.1", "Soll Anwesenheit", "Abwesenheit", "Ist Anwesenheit"}),
+				    #"Duplizierte Spalte" = Table.DuplicateColumn(#"Neu angeordnete Spalten4", "Datum", "Datum - Kopie"),
+				    #"Ersetzter Wert4" = Table.ReplaceValue(#"Duplizierte Spalte"," ","",Replacer.ReplaceText,{"Standort"}),
+				    #"Sortierte Zeilen" = Table.Sort(#"Ersetzter Wert4",{{"FürdasJahr", Order.Descending}, {"Datum", Order.Descending}}),
+				    #"Hinzugefügte benutzerdefinierte Spalte3" = Table.AddColumn(#"Sortierte Zeilen", "AE Ziel ges.", each [#"Ziel Ford/Tag"]+[#"Ziel Ford LKW/Tag"]+[#"Ziel Maxus/Tag"]+[#"Ziel Mazda/Tag"]+[#"Ziel X-Peng/Tag"]+[#"Ziel MG/Tag"]+[#"Ziel Peugeot/Tag"]+[#"Ziel Citroen/Tag"]+[#"Ziel Skoda/Tag"]+[#"Ziel Peugeot LKW/Tag"]+[#"Ziel Citroen LKW/Tag"]+[#"Ziel KIA/Tag"]),
+				    #"Geänderter Typ29" = Table.TransformColumnTypes(#"Hinzugefügte benutzerdefinierte Spalte3",{{"AE Ziel ges.", type number}})
+				in
+				    #"Geänderter Typ29"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

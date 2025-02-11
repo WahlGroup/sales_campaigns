@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
+  "name": "516a2188c8b809bd46a4",
+  "displayName": "Gesamt AE Übersicht mit ZEG",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8f207bde739156711142",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PowerBI CarLinerSFTPData"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "PowerBI CarLinerSFTPData",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'In Bearbeitung'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Verkauft'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "77d2722003b134ddd6ac",
+      "target": "bc68f131891dace3e54d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "159607a4ee804891606e",
+      "target": "bc68f131891dace3e54d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "99aa1eda49e3181b273b",
+      "target": "bc68f131891dace3e54d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "77d2722003b134ddd6ac",
+      "target": "61745c9eab2c3b71dbb0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "159607a4ee804891606e",
+      "target": "61745c9eab2c3b71dbb0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "99aa1eda49e3181b273b",
+      "target": "61745c9eab2c3b71dbb0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "99aa1eda49e3181b273b",
+      "target": "02ea86520e52c639163e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "99aa1eda49e3181b273b",
+      "target": "5613ce407d49ba9d15c1",
+      "type": "NoFilter"
+    }
+  ]
+}

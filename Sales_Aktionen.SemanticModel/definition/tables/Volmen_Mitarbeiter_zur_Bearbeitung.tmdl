@@ -1,0 +1,61 @@
+table Volmen_Mitarbeiter_zur_Bearbeitung
+	isHidden
+	lineageTag: 052afc67-60d6-4b9d-9363-da35e21bdf44
+
+	column Title
+		dataType: string
+		isHidden
+		lineageTag: f0cc69e7-570e-4a66-ad82-cef660eb1195
+		summarizeBy: none
+		sourceColumn: Title
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		lineageTag: 01899e12-dfb5-4768-bc52-98f6ee6f587d
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'F1 Nummer'
+		dataType: string
+		isHidden
+		lineageTag: 5fdaaeeb-0a14-4f63-98c3-ef07266e6299
+		summarizeBy: none
+		sourceColumn: F1 Nummer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Volmen_Mitarbeiter_zur_Bearbeitung = m
+		mode: import
+		queryGroup: 'Datei aus  Data Fehlzeiten  transformieren'
+		source =
+				let
+				    Quelle = SharePoint.Tables("https://wahlgroupde.sharepoint.com/sites/BI-Team/", [Implementation=null, ApiVersion=15]),
+				    #"46ffcdf5-7698-4131-be1e-88734c6fdaa4" = Quelle{[Id="46ffcdf5-7698-4131-be1e-88734c6fdaa4"]}[Items],
+				    #"Umbenannte Spalten" = Table.RenameColumns(#"46ffcdf5-7698-4131-be1e-88734c6fdaa4",{{"ID", "ID.1"}}),
+				    #"Andere entfernte Spalten" = Table.SelectColumns(#"Umbenannte Spalten",{"Title", "field_1", "field_6"}),
+				    #"Geänderter Typ" = Table.TransformColumnTypes(#"Andere entfernte Spalten",{{"field_6", Int64.Type}}),
+				    #"Ersetzte Fehler" = Table.ReplaceErrorValues(#"Geänderter Typ", {{"field_6", 0}}),
+				    #"Geänderter Typ1" = Table.TransformColumnTypes(#"Ersetzte Fehler",{{"field_1", type text}}),
+				    #"Umbenannte Spalten1" = Table.RenameColumns(#"Geänderter Typ1",{{"field_1", "Name"}}),
+				    #"Geänderter Typ2" = Table.TransformColumnTypes(#"Umbenannte Spalten1",{{"field_6", type text}}),
+				    #"Umbenannte Spalten2" = Table.RenameColumns(#"Geänderter Typ2",{{"field_6", "F1 Nummer"}})
+				in
+				    #"Umbenannte Spalten2"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
